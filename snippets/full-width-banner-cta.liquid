@@ -1,0 +1,67 @@
+<style>
+  @font-face {
+    font-family: 'Nostalgic Script';
+    src: url('{{ 'NostalgicScript.woff2' | asset_url }}') format('woff2'),
+        url(' {{ 'NostalgicScript.woff' | asset_url }}') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+
+
+  #shopify-section-{{ section.id }} .full-width-banner--cta {
+    background-image: url('{{ image | img_url: '1200x' }}');
+  }
+  {% if mobile != blank %}
+  @media (max-width: 767px) {
+    #shopify-section-{{ section.id }} .full-width-banner--cta {
+      background-image: url('{{ mobile| img_url: '1200x' }}');
+    }
+  }
+  {% endif %}
+
+  /* .fancy-text::after {
+     content: "{{ cta_text }}";
+  } */
+</style>
+
+<section class="full-width-banner full-width-banner--cta" style="{% if maxheight != blank %}max-height: {{maxheight}};{%endif%}">
+   {% comment %} <!-- <picture>
+    {% if mobile != blank %}
+    <source srcset=""
+            media="(max-width: 767px)">
+    {% endif %}
+    <img 
+      class="full-width-banner__img {% if enable_bottom_border_button != false %} full-width-banner__with-bottom-border {%endif%}" 
+      src="{{ image | img_url: '1200x' }}" 
+      src="{{ image | img_url: '400x' }}"
+      alt="{{ image.alt | escape }}"
+    />
+  </picture> --> {% endcomment %}
+  <div class="content text-center mb-2" >
+    {% comment %} <!-- <h1 class="mb-2 fancy-text">
+      <span class="fancy-text-span">{{ cta_text }}</span>
+    </h1> --> {% endcomment %}
+    {% if cta_title_image.src != blank %}
+    <h1 class="m-0">
+      <img 
+        class="full-width-banner--cta__title-image" 
+        src="{{ cta_title_image | img_url: '500x' }}" 
+        alt="{{ cta_title_image_alt | escape }}"
+      />
+    </h1>
+    {% endif %}
+    <h2 class="mb-2">{{ cta_sub }}</h2> 
+    <a class="button button__border button--black mb-4 mb-lg-5" href="{{button_url}}">{{ button_text }}</a>
+  </div>
+
+</section>
+
+{% comment %}
+<!-- 
+cta_text: section.settings.ctatext, 
+cta_sub: section.settings.ctatext_sub, 
+button_text: section.settings.cta_button_text, 
+button_url: section.settings.cta_button_link -->
+{% endcomment %}

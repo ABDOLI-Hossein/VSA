@@ -1,0 +1,29 @@
+<hr 
+  style="background-image: url('{{ 'vintage-state-apparel-text.svg' | asset_url }}')" 
+  class="hr__marquee {{ section.settings.scroll_direction | escape }}" 
+/>
+
+{% schema %}
+{
+  "name": "Scrolling Seperator",
+  "settings": [
+    {
+      "type": "radio",
+      "id": "scroll_direction",
+      "label": "Scroll Direction",
+      "options": [
+        { "value": "hr__scroll-left", "label": "Scroll Left" },
+        { "value": "hr__scroll-right", "label": "Scroll Right" }
+      ],
+      "default": "hr__scroll-left",
+      "info": "Scroll direction of text"
+    }
+  ],
+  "presets": [
+    {
+      "category": "EFLD - New",
+      "name": "Scrolling Seperator"
+    }
+  ]
+}
+{% endschema %}

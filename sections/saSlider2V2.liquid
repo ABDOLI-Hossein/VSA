@@ -1,0 +1,392 @@
+<script>
+     function hrefFunction(){
+    	window.location.href="/collections/"
+    
+    }
+</script>
+
+<style>
+      #saSlider2Title{
+        position: absolute;
+        left: 60px;
+        top: 0;
+        text-transform: uppercase;
+        color: #000;
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0;
+        letter-spacing: .1em;
+
+    }
+    #saSlider2Title2{
+        position: absolute;
+        left: 150px;
+        top: 65px;
+        color: #000;
+        font-size: 26px;
+        margin: 0;
+    }
+    .saSlider2  .owl-dots{
+        position: absolute;
+        right: 0;
+        bottom: -30px;
+        z-index: 10;
+        text-align: center;
+
+
+    }
+    .saSlider2overlay{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    	border-radius: 2px;
+
+    }
+    .saSlider2 .owl-dots button{
+        outline: none;
+    }
+    .saSlider2 .owl-dots button span{
+        border:none!important;
+        width: 25px!important;
+        height: 25px!important;
+        background-color: transparent!important;
+        display: flex!important;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+    }
+    .saSlider2 .owl-dots .active span{
+        border:1px solid #000!important;
+        width: 25px!important;
+        height: 25px!important;
+        background-color: transparent!important;
+        display: flex!important;
+        align-items: center;
+        justify-content: center;
+    }
+    .saSlider2SteperWrap{
+        width: 38%;
+        z-index: 3;
+        height: 4px;
+        display: flex;
+        position: absolute;
+        right: 125px;
+        bottom: -17px;
+    }
+    .saSlider2SteperWrap:after{
+        width: 100%;
+        height: 2px;
+        background-color: #E0E0E0;
+        content: "";
+        position: absolute;
+        bottom: 0;
+    }
+    .saSlider2SteperWrap #saSlider2Steper{
+        flex-grow: 1;
+        background-color: #000;
+        border-radius: 35%;
+    }
+    .saSlider2overlay button{
+        color: #000;
+        width: 160px;
+        height: 55px;
+        font-size: 16px;
+        font-weight: 400;
+        background-color: #fff;
+        border-radius: 2px;
+        display: flex;
+        border: none;
+        justify-content: center;
+        align-items: center;
+        outline: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        margin-right: 10px;
+    }
+    .saSlider2overlay a{
+        width: 55px;
+        height: 55px;
+        display: block;
+        background-color: #FFFFFF!important;
+        border-radius: 2px;
+    }
+    .saSlider2Right{
+        position: absolute;
+        bottom: 75px;
+        right: 0;
+        width: 570px;
+        height: 336px;
+        z-index: 99;
+    }
+    .saSlider2Right h6{
+        font-size: 22px;
+        color: #000;
+        margin: 0;
+        position: absolute;
+    	bottom: 30px;
+        right: 0;
+        left: 0;
+        text-align: center;
+    }
+    .saSlider2Left{
+
+        width: 540px;
+        height: 346px;
+        position: absolute;
+        top: 120px;
+        left: 0;
+        border-radius: 2px;
+    }
+    .saSlider2overlay button svg{    
+       transform: translateX(5px);
+       transition: 0.5s all ease;
+    }
+  	.saSlider2overlay button:hover svg{
+      	transform: translateX(10px);
+  	}
+  
+  	.saSlider2overlay button:hover{
+  		background-color:#f8f8f8;
+  	}
+  
+    .saSlider2Margin{
+		margin:90px 0;
+    }
+  	.saSlider2 .owl-dots .owl-dot span{
+  		margin:0!important;
+  	}
+
+
+  
+  
+  
+  
+  
+  @media only screen and (max-width:1000px){
+    .saSlider2V2Wrap{
+      flex-direction: column;
+    }
+    .saSlider2Left {
+      position: unset!important;
+      margin-bottom: 20px;
+
+    }
+    #saSlider2Title{
+      top: -100px!important;
+      font-size: 20px!important;
+      text-align: center;
+      left: 0!important;
+      right: 0;
+    
+    }
+    #saSlider2Title2{
+      top: -55px!important;
+      left: 0!important;
+      right: 0!important;
+      text-align: center;
+      font-size: 20px!important;
+
+    }
+/*     .saSlider2Right h6 {
+      font-size: 17px!important;
+      bottom: 50px!important;
+    } */
+    .saSlider2SteperWrap{
+    	display:none!important
+    }
+    
+/*     .saSlider2 .owl-dots {
+      right: 0;
+      bottom: 0!important;
+      left: 0;
+    } */
+    .saSlider2Right {
+    	position: relative!important;
+        bottom: 0!important;
+    }
+    .saSlider2Margin{
+    	margin: 160px 0;
+    }
+    
+    .saSlider2 .item > div{
+    	margin-top: 60px;
+    }
+    .saSlider2 .item{
+        position: relative;
+    }
+    .saSlider2Right h6 {
+        font-size: 17px!important;
+        top: -50px;
+        z-index: 99;
+	}
+    .saSlider2 .owl-dots {
+        right: 0;
+        bottom: 20px!important;
+        left: 0;
+	}
+  
+  
+  }
+
+  
+</style>
+
+<div class="per-10 flex-grow-1 p-relative saSlider2Margin">
+    <h2 id="saSlider2Title">{{ section.settings.title }}</h2>
+    <h3 id="saSlider2Title2">@vintagestateapparel</h3>
+        <div class="saSlider2V2Wrap" style="width: 100%;min-height: 600px;display: flex;flex-grow: 1;position: relative">
+          
+             <div class="per-5 flex-grow-1 saSlider2Left  image-bar__item lazyload  mw-100"
+                 data-bgset="{% include 'bgset', image: section.settings.imageSlide3Right %}">
+                <div class="saSlider2overlay">
+                    <button onclick="hrefFunction()">SHOP NOW
+<!--                   	        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M18.1041 10.7485H4.35413" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M12.5585 5.2262L18.1043 10.7482L12.5585 16.2711" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg> -->
+                  	</button>
+                    <a href="https://www.instagram.com/vintagestateapparel/" class="image-bar__item lazyload"
+                       style="background-size: auto;"
+                       data-bgset="{% include 'bgset', image: section.settings.instagram %}"></a>
+                </div>
+            </div>
+
+            <div class="per-5 flex-grow-1 saSlider2Right  mw-100">
+                <div class="owl-carousel owl-theme saSlider2">
+
+                    <div class="item">
+                        <div style="width: 100%;height: 410px;display: flex;flex-grow: 1">
+                            <div class="flex-grow-1 saSlider2Right image-bar__item lazyload"
+                                 data-bgset="{% include 'bgset', image: section.settings.imageSlide1Left %}"
+                                 style="background:url('<?php bloginfo('template_directory') ?>/images/img8.png') center center no-repeat"></div>
+                        </div>
+                        <h6>@vintagestateapparel</h6>
+                    </div>
+                    <div class="item">
+                        <div style="width: 100%;height: 410px;display: flex;flex-grow: 1">
+                            <div class="flex-grow-1 saSlider2Right  image-bar__item lazyload"
+                                 data-bgset="{% include 'bgset', image: section.settings.imageSlide2Left %}"
+                                 style="background:url('<?php bloginfo('template_directory') ?>/images/img8.png') center center no-repeat"></div>
+                        </div>
+                      	<h6>@vintagestateapparel</h6>
+                    </div>
+                    <div class="item">
+                        <div style="width: 100%;height: 410px;display: flex;flex-grow: 1">
+                            <div class="flex-grow-1 saSlider2Right  image-bar__item lazyload"
+                                 data-bgset="{% include 'bgset', image: section.settings.imageSlide3Left %}"
+                                 style="background:url('<?php bloginfo('template_directory') ?>/images/img8.png') center center no-repeat"></div>
+                        </div>
+                      	<h6>@vintagestateapparel</h6>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    <div class="saSlider2SteperWrap">
+        <div id="saSlider2Steper"></div>
+        <div class="flex-grow-1"></div>
+        <div class="flex-grow-1"></div>
+    </div>
+</div>
+
+
+<script>
+var owl2 = $(".saSlider2");
+    owl2.on('changed.owl.carousel', function(event) {
+        var item = event.item.index;
+        console.log(item)
+            switch (item){
+                case 0:
+                    console.log(1)
+                    $('#saSlider2Steper').css('transform',' translateX(0%)')
+                    break;
+                case 1:
+                    console.log(2)
+                    $('#saSlider2Steper').css('transform',' translateX(100%)')
+                    break;
+                case 2:
+                    $('#saSlider2Steper').css('transform',' translateX(200%)')
+                    break;
+            }
+
+    })
+    
+        
+    $(document).ready(function (){
+        $('.saSlider2 .owl-dots .owl-dot span').prepend('<div style="width: 7px;height: 7px;background-color: #000;border-radius: 100%"></div>')
+    })
+    
+    
+
+
+</script>
+
+{% schema %}
+  {
+    "name": "saSlider2V2",
+	"class" : "saSlider2Wrapper",
+    "settings": [
+		{
+          "type": "text",
+          "id": "title",
+          "label": {
+            "en": "title"
+          }
+       	},
+		{
+          "type": "image_picker",
+          "id": "imageSlide1Left",
+          "label": {
+            "en": "imageSlide1Left"
+      		}
+		},
+		{
+          "type": "image_picker",
+          "id": "imageSlide2Left",
+          "label": {
+            "en": "imageSlide2Left"
+      		}
+		},
+		{
+          "type": "image_picker",
+          "id": "imageSlide3Left",
+          "label": {
+            "en": "imageSlide3Left"
+      		}
+		},
+		{
+          "type": "image_picker",
+          "id": "imageSlide3Right",
+          "label": {
+            "en": "imageRight"
+      		}
+		},
+		{
+          "type": "image_picker",
+          "id": "instagram",
+          "label": {
+            "en": "SocialMediaLogo"
+      		}
+		}
+
+
+	],
+    "presets": [
+      {
+      "name": "saSlider2V2",
+      "category": "ADVANCED LAYOUT"
+      }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

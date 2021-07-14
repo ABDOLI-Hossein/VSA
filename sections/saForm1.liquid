@@ -1,0 +1,276 @@
+<div class="flex-grow-1 per-10 saForm1" style="text-align: center;margin:100px 0">
+    <h6>{{ section.settings.title1 }}</h6>
+<!--     <p>{{ section.settings.title2 }}</p> -->
+    <h5>{{ section.settings.title3 }}</h5>
+    <div class="flex-grow-1 per-10" style="background-color: #000;padding: 45px">
+      {%- assign formId = 'saForm1' -%}  
+      {% form 'contact', id:formId %}
+          {% include 'form-status', form: form, form_id: formId %}
+
+            
+            <div class="d-flex">
+                <input
+                       type="text"
+                       id="{{ formId }}-name"
+                       name="contact[name]"
+                       placeholder="Name"
+                       style="width: 100%">
+              
+                <input 
+                       type="email"
+                       id="{{ formId }}-email"
+                       name="contact[email]"
+                       placeholder="Email"
+                       style="width: 100%;margin: 0 10px;"
+                       class="margin-23">
+              
+                <input 
+                       type="tel"
+                       id="{{ formId }}-tell"
+                       name="contact[tel]"
+                       placeholder="Phone number"
+                       style="width: 100%">
+            </div>
+      		<div class="d-flex saForm1Select" style="margin-top: 20px;">
+              <div class="arrowSelect">
+            	  <select name="HeadWareStyle" id="HeadWareStyle">
+                    
+                    <option selected disabled>Headware Style</option>
+                    <option value="Classic Trucker">Classic Trucker</option>
+                    <option value="Trucker-LowProfile">Trucker-LowProfile</option>
+                    <option value="Adjustable7-Panel">Adjustable 7-Panel</option>
+                    <option value="Adjustable5-Panel">Adjustable 5-Panel</option>
+                  </select> 
+              </div>
+              <div style="margin: 0 10px;"   class="margin-23 arrowSelect">
+                  <select name="leatherColor" id="leatherColor">
+                    <option selected disabled>Leather Color</option>
+                    <option value="natural">Natural</option>
+                    <option value="rawhide">Rawhide</option>
+                    <option value="taupe">Taupe</option>
+                    <option value="black">Black</option>
+                  </select> 
+              </div>
+              <div  class="arrowSelect">
+                  <select name="Quantity" id="Quantity">
+                    <option selected disabled>Quantity</option>
+                    <option value="natural">12</option>
+                    <option value="rawhide">24</option>
+                    <option value="taupe">48</option>
+                    <option value="black">72</option>
+                    <option value="black">144</option>
+                    <option value="black">+250</option>
+                  </select> 
+              </div>
+      		</div>
+
+            <textarea 
+                      id="{{ formId }}-message"
+                      name="contact[message]"
+                      placeholder="Additional Questions You May Have"
+                      rows="10"
+                      style="width: 100%"></textarea>
+      
+      		<div class="saForm1SubmitWrap">
+                 <input 
+                   type="submit"
+                   value="Get Quote" />
+<!--                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.1041 10.7485H4.35413" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.5585 5.2262L18.1043 10.7482L12.5585 16.2711" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg> -->
+      		</div>
+       {% endform %}
+    </div>
+</div>
+<style>
+  	@media only screen and (max-width:1000px){
+      .saForm1 h6 {
+      	font-size:24px!important;
+      }
+      .saForm1 > div {
+          padding: 20px!important;
+      }
+      .saForm1 form > div {
+      	display:block!important;
+      }
+      .margin-23{
+      	margin:23px 0!important;
+      }
+      .saForm1 form a{
+      	width:100%;
+      }
+      .saForm1 .saForm1SubmitWrap input[type="submit"] , .saForm1 .saForm1SubmitWrap {
+        width: 100%!important;
+      }
+  	}
+  
+
+  
+  
+  
+  
+      .saForm1 h6{
+        font-size: 32px;
+        color: #000;
+        text-align: center;
+        font-weight: 900;
+        margin-bottom: 0;
+    }
+    .saForm1 p{
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 400;
+        color: #000;
+      	margin:27px 0;
+
+    }
+    .saForm1 h5{
+        font-size: 20px;
+        line-height: 30px;
+        color: #000;
+        font-weight: 700;
+        margin-top: 23px;
+    	margin-bottom: 45px;
+    }
+    .saForm1 textarea{
+        background-color: #000;
+        outline: none;
+        margin: 30px 0;
+        color: #fff;
+        border: 1px solid #fff;
+        padding: 15px;
+        font-size: 16px;
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+    .saForm1SubmitWrap{
+      	position:relative; 
+        width: fit-content;
+
+    }
+  
+    .saForm1 .saForm1SubmitWrap input[type="submit"]{
+        color: #000;
+        width: 215px;
+        height: 50px;
+        font-size: 16px;
+        font-weight: 400;
+        background-color: #fff;
+        border-radius: 2px;
+        display: flex;
+        border: none;
+        justify-content: center;
+        align-items: center;
+        outline: none;
+        cursor: pointer;
+        text-transform: uppercase;
+
+    }
+    .saForm1 .saForm1SubmitWrap svg{
+        position: absolute;
+        top: 14px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        transform: translateX(55px);
+        transition: 1s all ease;
+    }
+    .saForm1 .saForm1SubmitWrap input[type="submit"]:hover + svg{
+        transform: translateX(60px);
+    }
+  	.saForm1 .saForm1SubmitWrap input[type="submit"]:hover{
+  		background-color:#f8f8f8;
+      	color:#000;
+  	}
+  
+    .saForm1 input{
+        background-color: #000;
+        border: 1px solid #fff;
+        padding: 15px;
+        outline: none;
+        color: #fff;
+        font-size: 16px;
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+    .saForm1 input::placeholder,.saForm1 textarea::placeholder {
+        color: #fff;
+      	opacity:1;
+        font-size: 16px;
+/*         line-height: 30px; */
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+    .saForm1Select select{
+        width: 100%;
+      	background-color: rgb(0 0 0);
+    	color: rgb(255 255 255);
+      	padding:15px!important;
+        font-family: 'Roboto Condensed', sans-serif;
+      	position:relative;
+          border: 1px solid #fff;
+    }
+    .saForm1Select div{
+        flex-grow: 1;
+        width: 100%;
+    }
+    .saForm1Select .arrowSelect{
+      	position:relative;
+    }
+    .saForm1Select .arrowSelect:after{
+		color:#fff;
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        content: "\f078";
+        z-index: 98;
+        font-family: 'fontawesome';
+        pointer-events: none;
+ 	}
+
+  
+</style>
+
+  
+      
+
+
+{% schema %}
+  {
+    "name": "saForm1",
+    "settings": [
+		{
+          "type": "text",
+          "id": "title1",
+          "label": {
+            "en": "title1"
+          }
+       	},
+		{
+          "type": "text",
+          "id": "title2",
+          "label": {
+            "en": "title2"
+          }
+       	},
+		{
+          "type": "text",
+          "id": "title3",
+          "label": {
+            "en": "title3"
+          }
+       	}
+
+	],
+    "presets": [
+      {
+      "name": "saForm1",
+      "category": "ADVANCED LAYOUT"
+      }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

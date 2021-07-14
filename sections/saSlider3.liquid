@@ -1,0 +1,478 @@
+<style>
+  @media only screen and (max-width:1000px){
+    .saSlider3TextOverlay h3 {
+    	font-size: 24px!important;
+    }
+    .saSlider3TextOverlay {
+        justify-content: flex-end!important;
+    }
+    .saSlider3 .owl-dots{
+    	position:absolute;
+        bottom: -50px;
+    	right: 0;
+    	left: 0;
+    	justify-content: center!important;   	
+    }
+    .saSlider3 .owl-dots button{
+        padding: 5px!important;
+
+    }
+    .saSlider3Wrap a.buttonM{
+        height: 50px;
+        background-color: #000;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        border: 1px solid transparent;
+        color: #fff;
+        text-transform: uppercase;
+    	border-radius: 2px;
+        display: flex!important;
+    	align-items: center;
+    	justify-content:center;
+        position: absolute;
+        bottom: -120px;
+        width: 100%;
+        z-index: 99;
+  
+  	}
+    .saSlider3Each{
+    	height:400px;
+    }
+    .saSlider3Item3BgPos{
+        background-position-x: 66%!important;
+
+    }
+  
+  }
+  
+  
+  
+  
+  
+  .saSlider3 .owl-dots button{
+        outline: none;
+    }
+    .saSlider3 .owl-dots button span{
+        border:none!important;
+        width: 25px!important;
+        height: 25px!important;
+        background-color: transparent!important;
+        display: flex!important;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+      	margin:0!important;
+    }
+    .saSlider3 .owl-dots .active span{
+        border:1px solid #000!important;
+        width: 25px!important;
+        height: 25px!important;
+        background-color: transparent!important;
+        display: flex!important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .saSlider3Each{
+        height: 500px;
+        background-size: cover!important;
+    }
+    .saSlider3 .owl-stage-outer:after{
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: var(--t-height) 0 0 var(--t-width);
+        border-color: transparent transparent transparent #fff;
+        position: absolute;
+        top: 0;
+    }
+
+    .saTtest{
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0  var(--t-width) var(--t-height) 0;
+        border-color: transparent #fff transparent transparent;
+        position: fixed;
+        top: 0;
+        z-index: 12;
+    }
+    .saSlider3 .owl-dots{
+        justify-content: flex-end;
+        display: flex;
+        margin-top: 0!important;
+    }
+    .saSlider3 .owl-dots .owl-dot{
+        outline: none;
+    }
+    .saSlider3SteperWrap{
+        top: -20px;
+        width: 85%;
+        z-index: 3;
+        height: 4px;
+        display: flex;
+        position: relative;
+    }
+    .saSlider3SteperWrap:after{
+        width: 100%;
+        height: 2px;
+        background-color: #E0E0E0;
+        content: "";
+        position: absolute;
+        bottom: 0;
+    }
+    .saSlider3SteperWrap #saSlider3Steper{
+        flex-grow: 1;
+        background-color: #000;
+        border-radius: 35%;
+    }
+    .saSlider3TextOverlay{
+        position: absolute;
+        top: 0;
+        z-index: 15;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .saSlider3TextOverlay h2{
+        font-size: 48px;
+        font-weight: 900;
+        color: #000;
+        margin: 0;
+    }
+    .saSlider3TextOverlay h3{
+        font-size: 32px;
+        font-weight: 900;
+        color: #000;
+        margin: 20px 0;
+    	text-transform: uppercase;
+
+    }
+    .saSlider3TextOverlay p{
+        font-size: 16px;
+        line-height: 30px;
+        color: #000;
+        margin: 0;
+    }
+      .saSlider3TextOverlay a{
+        width: 160px;
+        height: 50px;
+        background-color: #000;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        border: 1px solid transparent;
+        color: #fff;
+        text-transform: uppercase;
+    	border-radius: 2px;
+        display: flex;
+    	align-items: center;
+    	justify-content:center;
+        margin-top:30px
+    }
+  
+
+  	
+  
+  
+    .saSlider3TextOverlay a svg{
+      transform: translateX(5px);
+       transition: 0.5s all ease;
+
+  	}
+  	.saSlider3TextOverlay a:hover svg{
+      	transform: translateX(10px);
+    }
+  	.saSlider3TextOverlay a:hover{
+      	background-color:rgba(0,0,0,0.8);
+      	color:#fff;
+      	transition: 0.5s all ease;
+  	}
+  
+</style>
+
+
+
+
+
+<div style="margin:130px 0" class="per-10 flex-grow-1 p-relative saSlider3Wrap">
+    <div class="flex-grow-1 per-5 d-flex saSlider3TextOverlay">
+        <h2>01</h2>
+        <h3>vintage collection</h3>
+        <p>Like a personal coat of arms, our quintessential state license plate collection brings history, memories, and state pride into one timeless style.</p>
+      	
+      	{% if section.settings.button_text != blank %}
+      	<a class="md-none" href="/pages/custom_order">{{ section.settings.button_text }}
+<!--       	   <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M18.1041 10.7485H4.35413" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+               <path d="M12.5585 5.2262L18.1043 10.7482L12.5585 16.2711" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+           </svg> -->
+      	</a>
+      	{% endif  %}
+    </div>
+    <div class="owl-carousel owl-theme saSlider3">
+        <div class="item">
+            <div class="saTtest"></div>
+            <div class="flex-grow-1 per-10 saSlider3Each image-bar__item lazyload"
+                 data-bgset="{% include 'bgset', image: section.settings.imageSlide1 %}">
+
+            </div>
+        </div>
+        <div class="item">
+            <div class="saTtest"></div>
+            <div class="flex-grow-1 per-10 saSlider3Each  image-bar__item lazyload"
+                  data-bgset="{% include 'bgset', image: section.settings.imageSlide2 %}">
+
+            </div>
+        </div>
+        <div class="item">
+            <div class="saTtest"></div>
+            <div class="flex-grow-1 per-10 saSlider3Item3BgPos saSlider3Each  image-bar__item lazyload"
+                  data-bgset="{% include 'bgset', image: section.settings.imageSlide3 %}" style="background-size: 158%">
+
+            </div>
+        </div>
+    </div>
+    {% if section.settings.button_text != blank %}
+      	<a class="buttonM" style="display:none" href="/pages/custom_order">{{ section.settings.button_text }}
+<!--       	   <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M18.1041 10.7485H4.35413" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+               <path d="M12.5585 5.2262L18.1043 10.7482L12.5585 16.2711" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+           </svg> -->
+      	</a>
+     {% endif  %}
+  
+  
+    <div class="saSlider3SteperWrap md-none">
+        <div id="saSlider3Steper"></div>
+        <div class="flex-grow-1"></div>
+        <div class="flex-grow-1"></div>
+    </div>
+</div>
+
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+<script>
+  
+
+  
+  
+  
+  
+  
+  
+      $(document).ready(function (){
+    var h2 = $('.saSlider3Each').height()+"px";
+    // var css2 = $('.saSlider3Each').attr('style')
+    var w2 = $('.saSlider3Each').width()+"px"
+    $('.owl-stage-outer').attr('style','--t-width:'+w2+';--t-height:'+h2)
+})
+    var owl3 = $(".saSlider3");
+    owl3.on('changed.owl.carousel', function(event) {
+        var item = event.item.index;
+        console.log(item)
+        switch (item){
+            case 0:
+                console.log(1)
+                $('.saSlider3Each').css('visibility','hidden')
+                $('#saSlider3Steper').css('transform',' translateX(0%)')
+                $('.saSlider3TextOverlay h2').html('01')
+                $('.saSlider3TextOverlay h3').html("{{ section.settings.titleSlide1 }}")
+                $('.saSlider3TextOverlay p').html("{{ section.settings.textSlide1 }}")                               
+                $('.saTtest').css({'width':'0'})
+                setTimeout(function (){
+                    $('.saSlider3Each').css('visibility','visible')
+                    $('.saTtest').animate({
+                        'width':'5000px'
+                    },1000)
+                },500)
+                /*setTimeout(function (){
+                    $('.owl-stage-outer').removeClass('fillAfter')
+                },500)*/
+                break;
+            case 1:
+                console.log(2)
+                $('.saSlider3Each').css('visibility','hidden')
+
+
+                $('.saTtest').css({'width':'0'})
+
+
+                $('#saSlider3Steper').css('transform',' translateX(100%)')
+                $('.saSlider3TextOverlay h2').html('02')
+                $('.saSlider3TextOverlay h3').html("{{ section.settings.titleSlide2 }}")
+                $('.saSlider3TextOverlay p').html("{{ section.settings.textSlide2 }}")  
+                 setTimeout(function (){
+                     $('.saSlider3Each').css('visibility','visible')
+                    $('.saTtest').animate({
+                        'width':'5000px'
+                    },1000)
+                },500)
+
+                // $('.owl-stage-outer').addClass('fillAfter')
+               /* setTimeout(function (){
+                    $('.owl-stage-outer').removeClass('fillAfter')
+                },500)*/
+                break;
+            case 2:
+            	$('.saSlider3Each').css('visibility','hidden')
+                $('.saTtest').css({'width':'0'})
+                $('#saSlider3Steper').css('transform',' translateX(200%)')
+                $('.saSlider3TextOverlay h2').html('03')
+                $('.saSlider3TextOverlay h3').html("{{ section.settings.titleSlide3 }}")
+                $('.saSlider3TextOverlay p').html("{{ section.settings.textSlide3 }}")  
+                setTimeout(function (){
+                  $('.saSlider3Each').css('visibility','visible')
+                    $('.saTtest').animate({
+                        'width':'5000px'
+                    },1000)
+                },500)
+                // $('.owl-stage-outer').addClass('fillAfter')
+               /* setTimeout(function (){
+                    $('.owl-stage-outer').removeClass('fillAfter')
+                },500)*/
+                break;
+        }
+
+    })
+    
+    
+        $(document).ready(function (){
+        $('.saSlider3 .owl-dots .owl-dot span').prepend('<div style="width: 7px;height: 7px;background-color: #000;border-radius: 100%"></div>')
+    })
+
+  
+
+  
+</script>
+
+
+
+
+
+
+
+
+
+
+{% schema %}
+  {
+    "name": "saSlider3",
+	"class" : "saSlider3Wrap",
+    "settings": [
+
+		{
+          "type": "image_picker",
+          "id": "imageSlide1",
+          "label": {
+            "en": "ImageSlide1"
+            }
+		},
+		{
+          "type": "text",
+          "id": "titleSlide1",
+          "label": {
+            "en": "titleSlide1"
+          }
+       	},
+		{
+          "type": "text",
+          "id": "textSlide1",
+          "label": {
+            "en": "textSlide1"
+          }
+       	},
+		{
+          "type": "image_picker",
+          "id": "imageSlide2",
+          "label": {
+            "en": "ImageSlide2"
+            }
+		},
+		{
+          "type": "text",
+          "id": "titleSlide2",
+          "label": {
+            "en": "titleSlide2"
+          }
+       	},
+		{
+          "type": "text",
+          "id": "textSlide2",
+          "label": {
+            "en": "textSlide2"
+          }
+       	},
+		{
+          "type": "image_picker",
+          "id": "imageSlide3",
+          "label": {
+            "en": "ImageSlide3"
+            }
+		},
+		{
+          "type": "text",
+          "id": "titleSlide3",
+          "label": {
+            "en": "titleSlide3"
+          }
+       	},
+		{
+          "type": "text",
+          "id": "textSlide3",
+          "label": {
+            "en": "textSlide3"
+          }
+       	},
+		{
+          "type": "text",
+          "id": "button_text",
+          "label": {
+            "en": "button_label"
+          }
+       	}
+
+	],
+	"presets": [
+      {
+      "name": "saSlider3",
+      "category": "ADVANCED LAYOUT"
+      }
+	]
+  }
+{% endschema %}
+
+
+{% stylesheet %}
+
+
+
+
+
+
+
+{% endstylesheet %}
+
+{% javascript %}
+
+
+
+
+
+
+{% endjavascript %}

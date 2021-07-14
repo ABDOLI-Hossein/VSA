@@ -1,0 +1,15 @@
+<section class="full-width-banner" {% if maxheight != blank %}style="max-height: {{maxheight}};"{%endif%}>
+  <picture>
+    {% if mobile != blank %}
+    <source srcset="{{ mobile| img_url: '1200x' }}"
+            media="(max-width: 767px)">
+    {% endif %}
+    <img 
+      class="full-width-banner__img {% if enable_bottom_border_button != false %} full-width-banner__with-bottom-border {%endif%}" 
+      src="{{ image | img_url: '1200x' }}" 
+      {%comment%}src="{{ image | img_url: '400x' }}"{%endcomment%}
+      alt="{{ image.alt | escape }}"
+    />
+  </picture>
+
+</section>

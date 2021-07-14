@@ -1,0 +1,90 @@
+<ul class="header__list header__desktop-list" role="menubar">
+  {% for link in linklists[section.settings.main_linklist].links %} {% if
+  forloop.index == 1 %}
+  <li class="header__list-li">
+    <a
+      class="dropdown-button header__dropdown-btn"
+      href="{{ link.url }}"
+      role="menuitem"
+    >
+      <span class="dropdown-button__body">
+        <span>{{ link.title | escape }}</span>
+        <span class="plus-sign"></span>
+      </span>
+    </a>
+    {% if link.links != blank %}
+    <!-- State Header Stuff! -->
+    <nav class="header__hidden-nav header__desktop-hidden-nav">
+      <div class="header__list-desktop-container">
+        <ul class="header__list--small" aria-hidden="true" role="menu">
+          {% for sub_link in link.links %}
+          <li class="header__list-li-small">
+            <a
+              class="dropdown-button header__dropdown-btn header__dropdown-btn-with-border"
+              href="#!"
+            >
+              <span class="dropdown-button__body">
+                <span>{{ sub_link.title | escape }}</span>
+                <span class="plus-sign"></span>
+              </span>
+            </a>
+            {% if sub_link.links != blank %}
+            <nav class="header__hidden-nav" data-nested-nav="true">
+              {% comment %} sub_sub_link - Third level menu {% endcomment %}
+              <ul class="header__list--small">
+                {% for sub_sub_link in sub_link.links %}
+                <li class="header__list-li-small">
+                  <a
+                    class="header__link header__link--normal"
+                    href="{{ sub_sub_link.url }}"
+                    role="menuitem"
+                    tabindex="-1"
+                    >{{ sub_sub_link.title | escape }}</a
+                  >
+                </li>
+                {% endfor %}
+              </ul>
+            </nav>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+    {% endif %}
+  </li>
+  {% else %} {% if link.links != blank %}
+  <!-- Rest of the navigation -->
+  <li class="header__list-li">
+    <a
+      class="dropdown-button header__dropdown-btn"
+      href="{{ link.url }}"
+      role="menuitem"
+    >
+      <span class="dropdown-button__body">
+        <span>{{ link.title | escape }}</span>
+        <span class="plus-sign"></span>
+      </span>
+    </a>
+    <nav class="header__hidden-nav header__desktop-hidden-nav">
+      <div class="header__list-desktop-container">
+        <ul class="header__list--small">
+          {% for sub_link in link.links %}
+          <li class="header__list-li-small">
+            <a class="header__link" href="{{ sub_link.url }}">{{
+              sub_link.title | escape
+            }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+  </li>
+  {% else %}
+  <li class="header__list-li">
+    <a class="header__link" href="{{ link.url }}" role="menuitem">{{
+      link.title | escape
+    }}</a>
+  </li>
+  {% endif %} {% endif %} {% endfor %}
+</ul>

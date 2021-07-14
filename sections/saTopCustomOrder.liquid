@@ -1,0 +1,74 @@
+<div class="per-10 flex-grow-1 saTopSections  image-bar__item lazyload"
+     data-bgset="{% include 'bgset', image: section.settings.image %}"
+     style="height: 270px">
+     <div class="saTopSectionsOverlay">
+         <h6>{{ section.settings.title }}</h6>
+     </div>
+</div>
+<style>
+  @media only screen and (max-width:1000px){
+    .saTopSections h6{
+    	font-size:24px!important;
+    }
+    .saTopSections{
+        height: 136px!important;
+    }
+
+    
+  }
+  
+  
+  
+    .saTopSections h6{
+        font-size: 48px;
+      	margin:0;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .saTopSectionsOverlay{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) -21.48%, rgba(0, 0, 0, 0) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+
+
+{% schema %}
+  {
+    "name": "saTopCustomOrder",
+    "settings": [
+		{
+          "type": "image_picker",
+          "id": "image",
+          "label": {
+            "en": "Image"
+            }
+		},
+		{
+          "type": "text",
+          "id": "title",
+          "label": {
+            "en": "title"
+          }
+       	}
+
+	],
+	"presets": [
+      {
+      "name": "saTopCustomOrder",
+      "category": "ADVANCED LAYOUT"
+      }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

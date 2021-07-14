@@ -1,0 +1,112 @@
+<!-- /templates/page.contact.liquid -->
+{% comment %}
+
+  This page template is a requirement if you are submitting your theme to the Shopify Theme Store.
+  Be sure to select page.contact as the template from the admin page to have this template take effect.
+
+  For information on adding more fields, visit:
+    - http://docs.shopify.com/support/configuration/store-customization/adding-fields-to-the-liquid-contact-form
+
+{% endcomment %}
+<style>
+
+.contact-wrapper {
+  display: flex;
+  max-width: 960px;
+  margin: 0 auto;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-wrapper .form {
+  flex: 1 1 400px;
+  margin-right: 40px;
+}
+
+@media (max-width: 879px) {
+  .contact-wrapper .form {
+    margin-right: 0;
+  }  
+}
+
+.contact-wrapper .contact-image {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.contact-image img {
+  width: 100%;
+  height: auto;
+}
+
+</style>
+
+{% assign hero_image = 'VSA-contact-us-page-hero-min.jpg' %}
+{% render 'new-hero', hero_image: hero_image, title: $page.title %}
+
+<section class="page">
+  <div class="wrapper">
+    {% comment %}
+      Regular page content goes here.
+    {% endcomment %}
+
+    {% comment %} <div class="content-container narrow contact rte">
+      {{ page.content }}
+    </div> {% endcomment %}
+
+    {% comment %}
+      Contact form starts here
+    {% endcomment %}
+    <div class="contact-wrapper">
+
+      <div class="content-container contact form">
+        {% form 'contact' %}
+
+          {% comment %}
+            Successful message
+          {% endcomment %}
+          {% if form.posted_successfully? %}
+            <p class="note form-success">
+              {{ 'contact.form.post_success' | t }}
+            </p>
+          {% endif %}
+
+          <div class="selection-wrapper">
+            {{ form.errors | default_errors }}
+          </div>
+
+          <div class="selection-wrapper">
+            <div class="input-row">
+              {% assign name_attr = 'contact.form.name' | t | handle %}
+              <label for="ContactFormName" class="hidden-label">{{ 'contact.form.name' | t }}</label>
+              <input type="text" id="ContactFormName" class="input-full" name="contact[{{ name_attr }}]" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+            </div>
+            <div class="input-row">
+              <label for="ContactFormEmail" class="hidden-label">{{ 'contact.form.email' | t }}</label>
+              <input type="email" id="ContactFormEmail" class="input-full" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+            </div>
+            <div class="input-row">
+              {% assign name_attr = 'contact.form.phone' | t | handle %}
+              <label for="ContactFormPhone" class="hidden-label">{{ 'contact.form.phone' | t }}</label>
+              <input type="tel" id="ContactFormPhone" class="input-full" name="contact[{{ name_attr }}]" pattern="[0-9\-]*" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+            </div>
+            <div class="input-row">
+              <label for="ContactFormMessage" class="hidden-label">{{ 'contact.form.message' | t }}</label>
+              <textarea rows="10" id="ContactFormMessage" class="input-full" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+            </div>
+            <p class="submit">
+              <input type="submit" class="button solid" value="{{ 'contact.form.send' | t }}">
+            </p>
+          </div>
+        
+
+        {% endform %}
+
+      </div>
+
+      <div class="contact-image">
+        <img src="{{ 'contact-page-image.jpg' | asset_img_url: '400x' }}" alt="contact page stock image" />
+      </div>
+    </div>
+  </div>
+</section>

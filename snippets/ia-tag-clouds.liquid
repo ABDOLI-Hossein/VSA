@@ -1,0 +1,29 @@
+
+<div class="nav-container">
+{% assign tags = "Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New Hampshire|New Jersey|New Mexico|New York|North Carolina|North Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Rhode Island|South Carolina|South Dakota|Tennessee|Texas|Utah|Vermont|Virginia|Washington|West Virginia|Wisconsin|Wyoming" | split: '|' %}
+
+<nav>
+  {% assign first = 1 %}
+  <h5 role="navigation">Search by State</h5> 
+  {% for tag in tags %}
+  	{% assign tag_handle = tag | handle | downcase %}
+  	{% if first == 1 %}
+  		{% assign first = 0 %}
+  	{% else %}
+  
+  	{% endif %}
+  	{% if product.tags contains tag_handle %}
+  
+  		<a title="Show products for {{ tag | capitalize}}" class="active tagcloud" href="/collections/{{ tag | handle | downcase }}"> {{ tag | capitalize }}</a>  			
+  	{% else %}
+  		
+  		<a title="Show products for {{ tag | capitalize}}" class="tagcloud" href="/collections/{{ tag | handle | downcase }}"> {{ tag | capitalize }}</a>  			
+  	{% endif %}
+  {% endfor %}
+</nav>
+
+
+
+
+
+</div>

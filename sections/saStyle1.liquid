@@ -1,0 +1,436 @@
+<div class="per-10 flex-grow-1 saStyle1" style="margin: 100px 0 150px 0">
+
+  	<div class="saStyle1ItemsWrap part2" style="height: 420px;position: relative;margin-top: 50px;margin-bottom: 85px">
+        <h6>Choose your style</h6>
+        <div title="Classic Trucker" class="saStyle1Part2ItemsEach t-100" style="top: 0;left: 0;--b-img:url('{{ section.settings.hat1Part2 | img_url: image_size, scale: 1 }}');--b-imgcolor:url('{{ section.settings.imageColor1 | img_url: image_size, scale: 1 }}')">
+             <img src="{{ section.settings.image1Part2 | img_url: image_size, scale: 2 }}"
+                     alt="{{ section.settings.logo.alt | default: shop.name }}">
+          	<div>
+                <div class="flex-grow-1 per-5 bg-orange left"></div>
+                <div class="flex-grow-1 per-5 bg-green right"></div>
+            </div>
+
+        </div>
+        <div title="Trucker Mid-Profile" class="saStyle1Part2ItemsEach" style="bottom: 0;left: 0;right: 30%;margin: 0 auto;--b-img:url('{{ section.settings.hat2Part2 | img_url: image_size, scale: 1 }}');--b-imgcolor:url('{{ section.settings.imageColor2 | img_url: image_size, scale: 1 }}')">
+              <img src="{{ section.settings.image2Part2 | img_url: image_size, scale: 2 }}"
+                     alt="{{ section.settings.logo.alt | default: shop.name }}">
+          	  <div>
+                <div class="flex-grow-1 per-5 bg-orange left"></div>
+                <div class="flex-grow-1 per-5 bg-green right"></div>
+             </div>
+        </div>
+        <div title="Adjustable 7-Panel" class="saStyle1Part2ItemsEach r-0 leftUnset" style="bottom: 0;left: 30%;right: 0;margin: 0 auto;--b-img:url('{{ section.settings.hat3Part2 | img_url: image_size, scale: 1 }}');--b-imgcolor:url('{{ section.settings.imageColor3 | img_url: image_size, scale: 1 }}')">
+              <img src="{{ section.settings.image3Part2 | img_url: image_size, scale: 2 }}"
+                     alt="{{ section.settings.logo.alt | default: shop.name }}">
+          	<div>
+                <div class="flex-grow-1 per-5 bg-orange left"></div>
+                <div class="flex-grow-1 per-5 bg-green right"></div>
+            </div>
+        </div>
+        <div title="Adjustable 5-Panel" class="saStyle1Part2ItemsEach t-100" style="top: 0;right: 0;--b-img:url('{{ section.settings.hat4Part2 | img_url: image_size, scale: 1 }}');--b-imgcolor:url('{{ section.settings.imageColor4 | img_url: image_size, scale: 1 }}')">
+             <img src="{{ section.settings.image4Part2 | img_url: image_size, scale: 2 }}"
+                     alt="{{ section.settings.logo.alt | default: shop.name }}">
+            <div>
+                <div class="flex-grow-1 per-5 bg-orange left"></div>
+                <div class="flex-grow-1 per-5 bg-green right"></div>
+            </div>
+        </div>
+
+    </div>
+    <img src="{{ section.settings.mainimage | img_url: image_size, scale: 4 }}"
+         alt="{{ section.settings.logo.alt | default: shop.name }}" style="max-width:50%;" class="mw-100">
+
+       <div class="saStyle1ItemsWrap" style="min-height: 440px;position: relative;margin: 50px 0">
+        <h6>Pick Your Leather</h6>
+        <div title="natural" class="saStyle1ItemsEach top80" style="top: 0;left: 0">
+            <img src="{{ section.settings.imageColor1 | img_url: image_size, scale: 2 }}"
+                 alt="{{ section.settings.logo.alt | default: shop.name }}">
+          
+          
+            <img src="{{ section.settings.image1 | img_url: image_size, scale: 2 }}"
+                 alt="{{ section.settings.logo.alt | default: shop.name }}">
+        </div>
+        <div title="rawhide" class="saStyle1ItemsEach rightUnset" style="bottom: 0;left: 0;right: 30%;margin: 0 auto">
+            <img src="{{ section.settings.imageColor2 | img_url: image_size, scale: 2 }}"
+                 alt="{{ section.settings.logo.alt | default: shop.name }}">
+          
+            <img src="{{ section.settings.image2 | img_url: image_size, scale: 2 }}"
+                 alt="{{ section.settings.logo.alt | default: shop.name }}">
+        </div>
+        <div title="taupe" class="saStyle1ItemsEach leftUnset" style="bottom: 0;left: 30%;right: 0;margin: 0 auto">
+            <img src="{{ section.settings.imageColor3 | img_url: image_size, scale: 2 }}"
+                 alt="{{ section.settings.logo.alt | default: shop.name }}">
+          
+          
+            <img src="{{ section.settings.image3 | img_url: image_size, scale: 2 }}"
+                 alt="{{ section.settings.logo.alt | default: shop.name }}">
+        </div>
+        <div title="black" class="saStyle1ItemsEach top80" style="top: 0;right: 0">
+            <img src="{{ section.settings.imageColor4 | img_url: image_size, scale: 2 }}"
+                 alt="{{ section.settings.logo.alt | default: shop.name }}">
+          
+          
+            <img src="{{ section.settings.image4 | img_url: image_size, scale: 2 }}"
+                 alt="{{ section.settings.logo.alt | default: shop.name }}">
+        </div>
+
+    </div>
+  
+  
+  
+
+</div>
+<style>
+  @media only screen and (max-width:1000px){
+    .saStyle1 h6 {
+        font-size: 24px!important;
+
+    }
+    .saStyle1ItemsEach {
+        width: 146px!important;
+    	height: 146px!important;
+    }
+    .rightUnset{
+    	right:unset!important;
+    }
+    .leftUnset{
+    	left:unset!important;
+    }
+    .saStyle1ItemsEach img:first-child {
+        width: 47px!important;
+    	height: 47px!important;
+    }
+    .top80{
+    	top:80px!important;
+    }
+    .saStyle1{
+    	margin: 50px 0!important;
+    }
+    .saStyle1 .part2{
+        height: 500px!important;
+        margin-bottom: 140px!important;
+
+/*         max-width: 90%;
+    	margin: 0 auto; */
+    }
+    .saStyle1Part2ItemsEach {
+        width: 146px!important;
+        height: 146px!important;
+        margin: unset!important;
+
+    }
+    .r-0{
+    	right:0!important;
+    }
+    .t-100{
+    	top:100px!important;
+    }
+    .saStyle1Part2ItemsEach img {
+    	max-width:75%!important;
+    }
+    .saStyle1Part2ItemsEach:after {
+        width: 55px!important;
+    	height: 55px!important;
+        background-size: 70%!important;
+      	right: 0px!important;
+
+    }
+    .saStyle1Part2ItemsEach:before {
+/*         top: 20px!important;
+        right: 0px!important;
+      	width:15px!important;
+      	height:15px!important; */
+		font-size: 20px!important;
+        bottom: -80px!important;
+        line-height: 33px!important;
+
+      }
+    .saStyle1ItemsWrap img{
+        max-width:75%!important;
+    }
+    
+    .saStyle1ItemsEach:after {
+        font-size: 20px!important;
+
+    }
+
+
+
+  
+  
+  }
+      .saStyle1Part2ItemsEach > div{
+
+        width :100%;
+        height: 100%;
+        border-radius: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+/*         transform: rotate(
+                45deg
+        ); */
+    }
+    .saStyle1Part2ItemsEach{
+        width :257px;
+        height: 257px;
+        position: absolute;
+    }
+  	.saStyle1Part2ItemsEach img{
+       	position: absolute;
+      	left: 0;
+      	right: 0;
+      	top: 0;
+      	bottom: 0;
+     	z-index: 9;
+      	margin: auto!important;
+  	}
+
+
+    .saStyle1Part2ItemsEach .right{
+        height: 100%;
+/*         background: #EEEEEE; */
+    	background-color: rgba(218, 227, 236, 0.3);
+    }
+    .saStyle1Part2ItemsEach .left{
+        height: 100%;
+/*         background-color: rgba(218, 227, 236, 0.3); */
+    	background-color: rgba(218, 227, 236, 0.3);
+    }
+    .saStyle1Part2ItemsEach:after{
+        content: "";
+        width: 100px;
+        height: 100px;
+      	background:var(--b-img);
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        border-radius: 100%;
+        border: 1px solid #eee;
+        background-repeat: no-repeat;
+    	background-position: center;
+    	background-color: #fff;
+
+
+    }
+    .saStyle1Part2ItemsEach:before{
+    	content: attr(title);
+        position: absolute;
+        bottom: -55px;
+        right: 0;
+        z-index: 9;
+        left: 0;
+        margin: 0 auto;
+        font-size: 24px;
+        line-height: 45px;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      .saStyle1 h6{
+        font-size: 32px;
+        line-height: 45px;
+        color: #000;
+        text-align: center;
+        margin: 0;
+        text-transform: uppercase;
+    }
+    .saStyle1 img{
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    .saStyle1ItemsEach{
+        width :257px;
+        height: 257px;
+    	background-color: rgba(218, 227, 236, 0.3);
+        border-radius: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .saStyle1ItemsEach:after{
+        content: attr(title);
+        position: absolute;
+        bottom: -50px;
+        font-size: 24px;
+        line-height: 45px;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .saStyle1ItemsWrap h6{
+        text-align: center;
+        color: #000;
+        font-size: 32px;
+        line-height: 45px;
+        padding-top: 10px;
+        text-transform: uppercase;
+
+    }
+    .saStyle1ItemsEach img:first-child{
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        top: 0;
+        right: 0;
+        border-radius: 100%
+    }
+</style>
+
+
+{% schema %}
+  {
+    "name": "saStyle1",
+    "settings": [
+	{
+      "type": "image_picker",
+      "id": "mainimage",
+      "label": {
+        "en": "main_image"
+      }
+    },
+	{
+      "type": "image_picker",
+      "id": "image1",
+      "label": {
+        "en": "image1"
+      }
+    },
+	{
+      "type": "image_picker",
+      "id": "image2",
+      "label": {
+        "en": "image2"
+      }
+    },
+	{
+      "type": "image_picker",
+      "id": "image3",
+      "label": {
+        "en": "image3"
+      }
+    },
+	{
+      "type": "image_picker",
+      "id": "image4",
+      "label": {
+        "en": "image4"
+      }
+    },
+	{
+      "type": "image_picker",
+      "id": "imageColor1",
+      "label": {
+        "en": "imageColor1"
+      }
+    },
+	{
+      "type": "image_picker",
+      "id": "imageColor2",
+      "label": {
+        "en": "imageColor2"
+      }
+    },
+	{
+      "type": "image_picker",
+      "id": "imageColor3",
+      "label": {
+        "en": "imageColor3"
+      }
+    },
+	{
+      "type": "image_picker",
+      "id": "imageColor4",
+      "label": {
+        "en": "imageColor4"
+      }
+    },
+	{
+      "type": "image_picker",
+      "id": "image1Part2",
+      "label": {
+        "en": "image1Part2"
+      }
+    },
+	{
+      "type": "image_picker",
+      "id": "image2Part2",
+      "label": {
+        "en": "image2Part2"
+      }
+    },
+	{
+      "type": "image_picker",
+      "id": "image3Part2",
+      "label": {
+        "en": "image3Part2"
+      }
+    },
+	{
+      "type": "image_picker",
+      "id": "image4Part2",
+      "label": {
+        "en": "image4Part2"
+      }
+    },
+	{
+      "type": "image_picker",
+      "id": "hat1Part2",
+      "label": {
+        "en": "hat1Part2"
+      }
+    },
+	{
+      "type": "image_picker",
+      "id": "hat2Part2",
+      "label": {
+        "en": "hat2Part2"
+      }
+    },
+	{
+      "type": "image_picker",
+      "id": "hat3Part2",
+      "label": {
+        "en": "hat3Part2"
+      }
+    },
+	{
+      "type": "image_picker",
+      "id": "hat4Part2",
+      "label": {
+        "en": "hat4Part2"
+      }
+    }
+
+	],
+    "presets": [
+      {
+      "name": "saStyle1",
+      "category": "ADVANCED LAYOUT"
+      }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,33 @@
+<!-- /snippets/new-hero.liquid -->
+{% assign page_title = title | split: " " %}
+
+{%- if hero_image != blank -%}
+  <header class="new-hero" style="margin-top: -20px;">
+
+    {% if hero_image != blank -%}
+
+      {% assign base_image  =  hero_image | asset_img_url: '1400x' %}
+
+      {% if mobile_image != blank %}
+        {% assign base_image =  mobile_image %}
+      {% endif %}
+
+      <picture class="backdrop">
+        <source media="(min-width: 767px)"
+          srcset="{{  hero_image | asset_img_url: '1400x' }}" />
+
+        <img style="display: block;" src="{{ base_image }}" alt="{{page_title}}" />
+    </picture>
+   {% endif %}
+
+    <div class="wrapper">
+      <div class="hero-title-container">
+        <div class="hero-title">
+          <div class="hero-title__left">{{ page_title[0] }}</div>
+          <div class="hero-title__right">{{ page_title[1] }}</div>
+        </div>
+      </div>
+      <h1 class="sr-only">{{ title }}</h1>
+    </div>
+  </header>
+{%- endif -%}

@@ -1,0 +1,14 @@
+{% comment %}Managed by ShopSheriff Shopify app{% endcomment %}
+
+{% if template contains 'product' %}
+  {% unless product.handle.size > 0 %}
+    {% assign denyAmp = true %}
+  {% endunless %}
+  {% assign amp_path = '/products/' | append: product.handle %}
+{% endif %}
+<script type="text/javascript">var _0x52f3=['ampproject.org','/a/s/','search','includes','utm','origin','utm_source=shopsheriff&utm_medium=amp&utm_campaign=shopsheriff&utm_content=add-to-cart','shopsheriff.amp-snippet.end','performance','mark','shopsheriff.amp-snippet.start','location','pathname','referrer'];(function(_0x1f1b45,_0x57f0bd){var _0x36d24c=function(_0x3fbd4d){while(--_0x3fbd4d){_0x1f1b45['push'](_0x1f1b45['shift']());}};_0x36d24c(++_0x57f0bd);}(_0x52f3,0xcc));var _0x5de3=function(_0x2f3e31,_0x3a89c9){_0x2f3e31=_0x2f3e31-0x0;var _0x2c6db2=_0x52f3[_0x2f3e31];return _0x2c6db2;};var a=window['performance']&&window[_0x5de3('0x0')][_0x5de3('0x1')];if(a){window[_0x5de3('0x0')]['mark'](_0x5de3('0x2'));}var doc=document;var redirect='/cart'===window[_0x5de3('0x3')][_0x5de3('0x4')]&&(doc[_0x5de3('0x5')]['includes'](_0x5de3('0x6'))||doc['referrer']['includes'](_0x5de3('0x7')))&&!doc['location'][_0x5de3('0x8')][_0x5de3('0x9')](_0x5de3('0xa'));if(redirect){var f=doc[_0x5de3('0x3')][_0x5de3('0x8')]?'&':'?';window[_0x5de3('0x3')]=window[_0x5de3('0x3')][_0x5de3('0xb')]+window[_0x5de3('0x3')][_0x5de3('0x4')]+f+_0x5de3('0xc');}if(a){window[_0x5de3('0x0')][_0x5de3('0x1')](_0x5de3('0xd'));}</script>
+{% unless denyAmp %}
+{% if amp_path %}
+   <link rel="amphtml" href="{{ 'https://' | append: 'vintagestateapparel.com/a/s' | append: amp_path  }}">
+{% endif %}
+{% endunless %}

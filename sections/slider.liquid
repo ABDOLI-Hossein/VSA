@@ -1,0 +1,161 @@
+<div class="glide homepage-slider transition">
+  <div class="image-container"></div>
+  <div class="spacer"></div>
+  <div class="glide__track h-100" data-glide-el="track">
+    <ul class="glide__slides h-100">
+      {% for block in section.blocks %}
+      <li 
+        class="glide__slide glide__slide-{{ forloop.index | minus: 1}}" 
+        data-image="{{ block.settings.slide_image | img_url: 'x1200' }}"
+        data-mobile-image="{% if block.settings.mobile_image != blank %}{{ block.settings.mobile_image | img_url: "x900"}}{%else%}{{ block.settings.slide_image | img_url: "x1200"}}{%endif%}"
+      >
+        <div class="container h-100 d-flex align-items-center">
+          <div class="homepage-slider__slide-body">
+            <h1 class="homepage-slider__slide-number">
+              0{{ forloop.index }}
+            </h1>
+
+            {% if block.settings.slide_title != blank %}
+            <h1 class="homepage-slider__slide-name">
+              {{ block.settings.slide_title | escape }}
+            </h1>
+            {% endif %}
+
+            {% if block.settings.slide_copy != blank %}
+            <div class="homepage-slider__slide-description">
+              {{ block.settings.slide_copy }}
+            </div>
+            {% endif %}
+
+            {% if block.settings.link_text != blank and block.settings.link_url != blank%}
+            <a 
+              class="button button__border button--black" 
+              href="{{ block.settings.link_url | escape }}"
+            >
+              {{ block.settings.link_text | escape }}
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="container position-relative">
+    <div class="homepage-slider__controls-container">
+      <div
+        class="glide__arrows homepage-slider__button-container"
+        data-glide-el="controls"
+      >
+        <button
+          class="glide__arrow glide__arrow--left homepage-slider__button-prev"
+          data-glide-dir="<"
+        >
+          <svg
+            width="31"
+            height="16"
+            viewBox="0 0 31 16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.292891 8.70711C-0.0976334 8.31658 -0.0976334 7.68342 0.292891 7.29289L6.65685 0.928932C7.04738 0.538408 7.68054 0.538408 8.07107 0.928932C8.46159 1.31946 8.46159 1.95262 8.07107 2.34315L2.41421 8L8.07107 13.6569C8.46159 14.0474 8.46159 14.6805 8.07107 15.0711C7.68054 15.4616 7.04738 15.4616 6.65685 15.0711L0.292891 8.70711ZM31 9H0.999998V7H31V9Z"
+            />
+          </svg>
+        </button>
+
+        <button
+          class="glide__arrow glide__arrow--right homepage-slider__button-next"
+          data-glide-dir=">"
+        >
+          <svg
+            width="31"
+            height="16"
+            viewBox="0 0 31 16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M30.7071 8.70711C31.0976 8.31658 31.0976 7.68342 30.7071 7.29289L24.3431 0.928932C23.9526 0.538408 23.3195 0.538408 22.9289 0.928932C22.5384 1.31946 22.5384 1.95262 22.9289 2.34315L28.5858 8L22.9289 13.6569C22.5384 14.0474 22.5384 14.6805 22.9289 15.0711C23.3195 15.4616 23.9526 15.4616 24.3431 15.0711L30.7071 8.70711ZM0 9H30V7H0V9Z"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div
+        class="glide__bullets homepage-slider__bar"
+        data-glide-el="controls[nav]"
+      >
+        <div class="homepage-slider__progress-bar"></div>
+        {% for block in section.blocks %}
+        <button
+          class="glide__bullet homepage-slider__indicator-button"
+          data-glide-dir="={{ forloop.index | minus: 1}}"
+        ></button>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Slider",
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+			    "id": "slide_image",
+			    "label": "Slide Image"
+        },
+        {
+          "type": "image_picker",
+			    "id": "mobile_image",
+			    "label": "Slide Image"
+		    },
+        {
+          "type": "text",
+          "id": "slide_title",
+          "label": "Slide Title",
+          "default": "Slide Title"
+        },
+        {
+          "type": "richtext",
+          "id": "slide_copy",
+          "label": "Slide Copy"
+        },
+        {
+			    "type": "text",
+			    "id": "link_text",
+			    "label": "Link Text",
+			    "default": "Shop Now"
+		    },
+        {
+		    	"type": "url",
+		    	"id": "link_url",
+		    	"label": "Link URL"
+		    }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "EFLD - New",
+      "name": "Slider",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

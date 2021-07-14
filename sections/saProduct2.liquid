@@ -1,0 +1,241 @@
+<div class="per-10 flex-grow-1 d-flex saProduct2 flexDrectionColumnM" style="min-height: 600px;margin-bottom:130px;">
+
+    <a class=" flex-grow-1 height330 mr-0-m mb-85-m" style="margin-right:20px;" href="/collections/hats-and-headwear">
+        <div class="flex-grow-1  lazyload " id="satest"
+             data-bgset="{% include 'bgset', image: section.settings.image1 %}"
+             style="position:relative;height: 100%;background-size: cover;">
+                  <div class="product2TitleEachWrapper">
+                    <h6>HeadWear</h6>
+					<button>Shop now</button>
+                  </div>
+      	<div class="saProduct2Linear"></div>
+        </div>
+
+  	</a>
+    <div class="flex-grow-1">
+        <div class="flex-grow-1 d-flex  flexDrectionColumnM" style="height: 50%">
+            <a class="flex-grow-1  height330 mr-0-m mb-85-m" style="margin-right: 20px;margin-bottom:20px" href="/collections/apparel">
+              <div class="flex-grow-1  image-bar__item lazyload"
+                   style="height:100%"
+                   data-bgset="{% include 'bgset', image: section.settings.image2 %}">
+                  <div class="product2TitleEachWrapper">
+                    <h6>Apparel</h6>
+					<button>Shop now</button>
+                  </div>
+
+			  <div class="saProduct2Linear"></div>
+              </div>
+          	</a>
+          	<a class="flex-grow-1  height330 mb-85-m" style="margin-bottom:20px" href="/collections/bottles">
+              <div class="flex-grow-1 image-bar__item lazyload"
+                   style="height:100%"
+                   data-bgset="{% include 'bgset', image: section.settings.image3 %}">
+                <div class="product2TitleEachWrapper">
+                  <h6>drinkware</h6>
+                  <button>Shop now</button>
+                </div>
+			  <div class="saProduct2Linear"></div>
+              </div>
+          	</a>
+        </div>
+        
+      <a href="/pages/custom_order" class="height330 mb-85-m">
+      	<div class="flex-grow-1 image-bar__item lazyload height330" style="height: 50%;background-position: top;position:relative"
+             data-bgset="{% include 'bgset', image: section.settings.image4 %}">
+              <div class="product2TitleEachWrapper">
+                <h6>Custom orders</h6>
+                <button>Shop now</button>
+              </div>
+			<div class="saProduct2Linear"></div>
+        </div>
+      </a>
+      
+      
+    </div>
+</div>
+
+
+<style>
+  @media only screen and (max-width:1000px){
+    .height330{
+    	    height: 330px!important;
+    }
+    .mr-0-m{
+    	margin-right:0!important;
+    }
+    .mb-85-m{
+    	margin-bottom:85px!important;
+    }
+    .product2TitleEachWrapper{
+    	width:100%;
+      	text-align:center;
+      	left:0!important;
+    }
+    .product2TitleEachWrapper button {
+        bottom: -80px;
+        position: absolute;
+        color: #fff!important;
+        width: 100%;
+        border: 1px solid #000!important;
+        background-color: #000!important;
+        justify-content: center;
+        padding: 10px!important;
+
+    }
+    .product2TitleEachWrapper button svg {
+    	display:none!important;
+    }
+/*     .saProduct2{
+    	margin-top:170px;
+    } */
+
+  
+  }
+  .saProduct2Linear{
+  	width:100%;
+    height:100%;
+/*  	background:linear-gradient(180deg, rgba(0, 0, 0, 0) 39.88%, #000000 100%);*/
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 70.88%, #000000 100%);
+    transition: 0.5s all ease;
+  }
+  .saProduct2 a:hover .saProduct2Linear{
+     background:linear-gradient(180deg, rgba(0, 0, 0, 0) 39.88%, #000000 100%);
+  }
+  
+  
+  .product2TitleEach{
+  	font-size:24px;
+    color:#fff;
+    text-transform:uppercase;
+    position:absolute;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  .product2TitleEachWrapper{
+	bottom: 15px;
+    left: 15px;
+    position:absolute;
+
+  }
+  .product2TitleEachWrapper h6{
+    font-size:24px;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform:uppercase;
+    color:#fff;
+    margin-bottom: 0;
+    font-weight: 400;
+
+  }
+
+  .product2TitleEachWrapper button{
+  	font-size:17px;
+    color:#fff;
+    text-transform:uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: transparent;
+    border: 0;
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+
+  }
+  .product2TitleEachWrapper svg{
+    transform: translateX(5px);
+    transition: 0.5s all ease;
+  }
+  
+  
+  .product2TitleEachWrapper button:hover svg{
+  	transform: translateX(10px);
+  
+  }
+  .product2TitleV2{
+  	bottom: 15px;
+    display: flex;
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+</style>
+
+
+
+{% schema %}
+  {
+    "name": "product2",
+	"class": "saProduct2",
+    "settings": [
+		{
+          "type": "image_picker",
+          "id": "image1",
+          "label": {
+            "en": "Image1"
+          }
+    	},
+		{
+          "type": "text",
+          "id": "productName1",
+          "label": {
+            "en": "productName1"
+          }
+    	},
+		{
+          "type": "image_picker",
+          "id": "image2",
+          "label": {
+            "en": "Image2"
+          }
+    	},
+		{
+          "type": "text",
+          "id": "productName2",
+          "label": {
+            "en": "productName2"
+          }
+    	},
+		{
+          "type": "image_picker",
+          "id": "image3",
+          "label": {
+            "en": "Image3"
+          }
+    	},
+		{
+          "type": "text",
+          "id": "productName3",
+          "label": {
+            "en": "productName3"
+          }
+    	},
+		{
+          "type": "image_picker",
+          "id": "image4",
+          "label": {
+            "en": "Image4"
+          }
+    	},
+    	{
+          "type": "text",
+          "id": "productName4",
+          "label": {
+            "en": "productName4"
+          }
+        }
+
+	],
+    "presets": [
+    {
+    "name": "product2",
+    "category": "ADVANCED LAYOUT"
+    }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

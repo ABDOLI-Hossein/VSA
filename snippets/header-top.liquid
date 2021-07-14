@@ -1,0 +1,108 @@
+<nav class="header__top-nav">
+  <div class="container">
+    <ul class="header__top-nav-list">
+      <li>
+        <button class="mobile-nav-button" id="mobile-nav-button" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <form class="header__search-bar d-none d-lg-block" action="/search">
+          <span class="header__search-icon">
+            <svg
+              aria-hidden="true"
+              class="icon icon-ui-search"
+              focusable="false"
+              height="18"
+              role="presentation"
+              viewBox="0 0 512 512"
+              width="18"
+            >
+              <path
+                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+              ></path>
+            </svg>
+          </span>
+
+          <input
+            class="header__search-input"
+            id="desktop-search-input"
+            name="q"
+            placeholder="search"
+            required
+            type="text"
+          />
+
+          <button class="arrow-button header__search-btn" type="submit">
+            <span>
+              <svg
+                width="24"
+                height="8"
+                viewBox="0 0 24 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M23.3536 4.35355C23.5488 4.15829 23.5488 3.84171 23.3536 3.64645L20.1716 0.464466C19.9763 0.269204 19.6597 0.269204 19.4645 0.464466C19.2692 0.659728 19.2692 0.976311 19.4645 1.17157L22.2929 4L19.4645 6.82843C19.2692 7.02369 19.2692 7.34027 19.4645 7.53553C19.6597 7.7308 19.9763 7.7308 20.1716 7.53553L23.3536 4.35355ZM0 4.5L23 4.5V3.5L0 3.5L0 4.5Z"
+                  fill="#5A6E86"
+                />
+              </svg>
+            </span>
+          </button>
+        </form>
+      </li>
+
+      <li class="header-logo" style="padding: 1.5em 0 0;">
+        <h1
+          class="site-logo {% if settings.logo %}has-image{% endif %}"
+          itemscope
+          itemtype="http://schema.org/Organization"
+        >
+          {% if settings.logo %}
+          <a href="/" itemprop="url" class="logo-image">
+            {%- assign image = settings.logo -%}
+            {%- assign image_default_width = settings.logo_max_width -%}
+            {%- assign image_2x_width = image_default_width | times: 2 -%}
+            {%- assign image_3x_width = image_default_width | times: 3 -%}
+            {%- assign image_default = image_default_width | append: 'x' -%}
+            {%- capture widths -%}{{ image_default_width }},{{ image_2x_width }},{{ image_3x_width }}{%- endcapture -%}
+            {% assign image_widths = widths %}
+            {% include 'theme-rias' %}
+            <img id="{{ img_id }}" class="lazyload" src="{{ image }}"
+                 alt="{{ image.alt | escape | default: shop.name }}">
+          </a>
+          {% else %}
+          <a href="/" itemprop="url">{{ shop.name }}</a>
+          {% endif %}
+        </h1>
+      </li>
+      <li class="right-wrapper">
+        {% comment %} If customer accounts are enabled, provide login and create
+        account links {% endcomment %} {% if shop.customer_accounts_enabled %}
+        {% include 'accounts-nav' %} {% endif %} {% comment %} Show number of
+        items in the cart and total cost in the /cart link {% endcomment %}
+        <a href="/cart" id="CartButton">
+          <span class="icon-fallback-text">
+            {%- assign cart_icon = 'icon-ui-' | append: settings.cart_icon -%}
+            <span class="icon icon-cart" aria-hidden="true"
+              >{% include cart_icon %}</span
+            >
+          </span>
+          <span id="CartCount">{{ cart.item_count }}</span>
+          {{ "layout.cart.title" | t }}
+          <span id="CartCost" class="money"
+            >{% unless cart.item_count == 0 %}{{ cart.total_price | money }}{%
+            endunless %}</span
+          >
+        </a>
+        {% if settings.ajax_cart_enable %} {% include 'cart-preview' %} {% endif
+        %}
+      </li>
+      <!-- <li class="d-flex align-items-center">
+          <a class="d-lg-block d-none header__link mr-4" href="#!"> account </a>
+          <button type="button">NEW CART (0)</button>
+        </li> -->
+    </ul>
+  </div>
+</nav>

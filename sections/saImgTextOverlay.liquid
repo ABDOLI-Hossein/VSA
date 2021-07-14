@@ -1,0 +1,215 @@
+<div class="per-10 flex-grow-1 imgTextOverlay1 p-relative image-bar__item lazyload"
+     data-bgset="{% include 'bgset', image : section.settings.image %}"
+     style="height: 625px;margin:160px 0">
+
+
+
+    <div class="flex-grow-1 per-10 overlay1">
+
+        <div class="flex-grow-1 per-4 mw-100 mText-center mHeight" style="padding: 40px">
+            <h2>{{ section.settings.title }}</h2>
+            <p>
+               {{ section.settings.text1 }}
+            </p>
+            <p>
+               {{ section.settings.text2 }}
+            </p>
+            <a href="/pages/about-us" class="mMargin-auto">{{ section.settings.btn_label }}
+<!--           	<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.1041 10.7485H4.35413" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M12.5585 5.2262L18.1043 10.7482L12.5585 16.2711" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg> -->
+          	
+          	</a>
+        </div>
+        <div class="flex-grow-1 per-6"></div>
+    </div>
+</div>
+<style>
+  	
+      @media only screen and (max-width:1000px){
+          .imgTextOverlay1:after{
+              border-color: rgba(0,0,0,0.6)!important;
+    	   }
+        .imgTextOverlay1{
+        	margin:50px 0!important;
+          	background-position: 80% 50%!important;
+        }
+        .imgTextOverlay1:after{
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          bottom: 0;
+          top: 0;
+          left: 0;
+          border-style: solid;
+          border-width: var(--t-height) var(--t-width) 0 0;
+          border-color: rgba(0,0,0,0.5) transparent transparent transparent;
+    	}
+        .imgTextOverlay1 h2{
+    		margin-bottom: 25px;
+
+    	}
+        .imgTextOverlay1 p{
+            text-align: left;
+    	}
+
+        .imgTextOverlay1 a{
+            margin-top: 50px!important;
+        }
+        
+
+
+      }
+  
+  
+  
+  
+  
+  
+      .imgTextOverlay1 h2{
+        font-size: 32px;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .imgTextOverlay1 p{
+        font-size: 16px;
+        color: #fff;
+        font-weight: 400;
+        line-height: 30px;
+    }
+    .imgTextOverlay1 a{
+        color: #000;
+        width: 174px;
+        height: 55px;
+        font-size: 16px;
+        font-weight: 400;
+        background-color: #fff;
+        border-radius: 2px;
+        display: flex;
+        border: none;
+        justify-content: center;
+        align-items: center;
+        outline: none;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+  
+  	.imgTextOverlay1 a svg{
+        transform: translateX(5px);
+        transition: 0.5s all ease;
+  	}
+  	.imgTextOverlay1 a:hover svg{
+        transform: translateX(10px);
+  	}
+    .imgTextOverlay1 a:hover{
+        background-color: #F8F8F8;
+  	}
+  
+  
+    .imgTextOverlay1 .overlay1{
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        position: relative;
+    }
+      .imgTextOverlay1:after{
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        border-style: solid;
+        border-width: var(--t-height) var(--t-width) 0 0;
+        border-color: rgba(0,0,0,0.6) transparent transparent transparent;
+    }
+  
+</style>
+
+<script>
+    var h = $('.imgTextOverlay1').height()+"px";
+    var css = $('.imgTextOverlay1').attr('style')
+    var w = $('.imgTextOverlay1').width()+"px"
+    $('.imgTextOverlay1').attr('style',css+';--t-width:'+w+';--t-height:'+h)
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% schema %}
+  {
+    "name": "imgTextOverlay1",
+    "settings": [
+		{
+          "type": "image_picker",
+          "id": "image",
+          "label": {
+            "en": "Image"
+      		}
+		},
+		{
+          "type": "image_picker",
+          "id": "image2",
+          "label": {
+            "en": "Imagemobile"
+      		}
+		},
+		{
+          "type": "text",
+          "id": "title",
+          "label": {
+            "en": "title"
+          }
+        },
+		{
+          "type": "text",
+          "id": "text1",
+          "label": {
+            "en": "text1"
+          }
+        },
+		{
+          "type": "text",
+          "id": "text2",
+          "label": {
+            "en": "text2"
+          }
+        },
+		{
+          "type": "text",
+          "id": "btn_label",
+          "label": {
+            "en": "button_label"
+          }
+        }
+
+	],
+    "presets": [
+    {
+    "name": "imgTextOverlay1",
+    "category": "ADVANCED LAYOUT"
+    }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

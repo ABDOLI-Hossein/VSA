@@ -1,0 +1,108 @@
+<section class="product-showcase px-md-2 px-lg-0 mt-3">
+  {% for block in section.blocks %}
+  <div class="product-showcase__item mt-3 mt-lg-0 px-md-2 px-lg-0">
+    <a 
+      class="product-showcase__link-wrapper" 
+      href="{{ block.settings.link_url | escape }}"
+    >
+      {% if block.settings.category_image != blank %}
+      <img
+        class="product-showcase__image"
+        src="{{ block.settings.category_image | img_url: 'x600' }}"
+        srcset="{{ block.settings.category_image | img_url: 'x1200' }} 2x"
+        alt="{{ block.settings.category_image.alt }}"
+      />
+      {% endif %}
+  
+      <div class="product-showcase__body">
+        {% if block.settings.category_title != blank %}
+        <h2 class="product-showcase__title" style="color: {{ block.settings.title_color | escape }}">
+          {{ block.settings.category_title | escape }}
+        </h2>
+        {% endif %}
+  
+        {% if block.settings.link_text != blank and block.settings.link_url != blank%}
+        <button
+          type="button" 
+          class="button button__border {{ block.settings.link_color | escape }} product-showcase__button"
+        >
+          {{ block.settings.link_text | escape }}
+        </button>
+        {% endif %}
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</section>
+
+{% schema %}
+{
+  "name": "Category Navigation",
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "category_image",
+          "label": "Category Image"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Category Title Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "text",
+          "id": "category_title",
+          "label": "Category Title",
+          "default": "Category Title"
+        },
+        {
+          "type": "radio",
+          "id": "link_color",
+          "label":  "Link Button Color",
+          "options": [
+            { "value": "button--black", "label": "Black" },
+            { "value": "button--white", "label": "White" }
+          ],
+          "default": "button--black"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "EFLD - New",
+      "name": "Category Navigation",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

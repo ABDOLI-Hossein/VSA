@@ -1,0 +1,48 @@
+<style>
+  .parallax__image {
+    {% if section.settings.mobile_image != blank %}
+    background-image: url('{{ section.settings.mobile_image | img_url: 'x600' }}')
+    {% else %}
+    background-image: url('{{ section.settings.desktop_image | img_url: 'x600' }}')
+    {% endif %}
+  }
+  @media (min-width: 768px) {
+    .parallax__image {
+      {% if section.settings.desktop_image != blank %}
+      background-image: url('{{ section.settings.desktop_image | img_url: 'x1440' }}')
+      {% else %}
+      background-image: url('{{ section.settings.mobile_image | img_url: 'x1440' }}')
+      {% endif %}
+    }
+  }
+</style>
+
+<div class="parallax">
+  <div class="parallax__wrapper">
+    <div class="parallax__image"></div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Parallax Seperator",
+  "settings": [
+    {
+      "type": "image_picker",
+			"id": "desktop_image",
+			"label": "Desktop Parallax Image"
+		}, 
+    {
+      "type": "image_picker",
+			"id": "mobile_image",
+			"label": "Mobile Parallax Image"
+		}
+  ],
+  "presets": [
+    {
+      "category": "EFLD - New",
+      "name": "Parallax Seperator"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,13 @@
+<!-- /templates/page.about.liquid -->
+{% comment %} {% assign page_title = $page.title | split: " " %} {% endcomment %}
+{% assign hero_image = 'VSA-about-us-page-hero-min.jpg' %}
+
+{% render 'new-hero', hero_image: hero_image, title: $page.title, mobile_image: page.metafields.pages.mobile_header %}
+
+<section class="page about-page">
+  <div class="wrapper">
+    <div class="content-container narrow rte">
+      {{ page.content }}
+    </div>
+  </div>
+</section>

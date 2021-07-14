@@ -1,0 +1,57 @@
+<style>
+img.custom-full-width, picture.custom-full-width {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+</style>
+
+<section class="full-width-image-section mb-4">
+
+    {% for image_block in section.blocks %}
+  
+      <picture class="custom-full-width">
+        {% assign mobile_image =  image_block.settings.desktop_image | img_url: 'x600'  %}
+
+        {% if image_block.settings.mobile_image != blank %}
+          {% assign mobile_image = image_block.settings.mobile_image | img_url: 'x600' %}
+        {% endif %}
+
+        <source media="(min-width: 800px)" srcset="{{ image_block.settings.desktop_image | img_url: 'x1200' }}">
+        <img class="custom-full-width" src="{{ mobile_image }}" alt="">
+      </picture>
+  
+  
+    {% endfor %}
+</section>
+
+{% schema %}
+{
+  "name": "Full Width Image",
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Desktop Image"
+        }, 
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "EFLD - New",
+      "name": "Full Width Image"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,289 @@
+{{ "saLazysizes.js" | asset_url | script_tag }}
+
+<div class="per-10 flex-grow-1 p-relative d-flex saVideo1" style="margin: 100px 0;min-height: 500px;">
+    <div class="flex-grow-1 per-6 saVideo1Left mw-100">
+        <div class="per-7 mw-100" style="padding:30px">
+            <h3>{{ section.settings.title }}</h3>
+            <p>{{ section.settings.text }}</p>
+          
+          	{% if section.settings.btn_laybel != blank  %}
+            <a href="/pages/custom_order" class="mMargin-auto">{{ section.settings.btn_laybel }}
+          	</a>
+          
+          	{% endif %}
+        </div>
+    </div>
+    <div class="flex-grow-1 per-6 saVideo1Right image-bar__item lazyload">
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/aiHlvpTEXbs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      
+      
+      
+<!--         <div class="saVideo1PlayButton">
+            <svg width="28" height="33" viewBox="0 0 28 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M25.4997 12.3003C28.5486 14.2701 28.5486 18.7299 25.4997 20.6997L8.21338 31.8681C4.88639 34.0176 0.500002 31.6294 0.500002 27.6684L0.500003 5.33158C0.500003 1.37061 4.88638 -1.01764 8.21337 1.13187L25.4997 12.3003Z" fill="white"/>
+			</svg>
+
+        </div> -->
+
+    </div>
+
+
+</div>
+<style>
+  @media only screen and (max-width:1000px){
+    .saVideo1 .saVideo1Right{
+    	height: 260px!important;
+/*       	top: 230px!important; */
+          top: 260px!important;
+
+        max-width: 85%;
+    	margin: 0 auto;
+    	left: 0;
+    }
+    
+    .saVideo1 .saVideo1Left{
+        align-items: baseline!important;
+        text-align:center;
+    }
+    .saVideo1{
+    	margin:33px 0!important;
+        margin-top: 165px!important;
+
+    }
+  
+  }
+  
+
+  
+  
+  
+    .saSlider1 .owl-dots a{
+        outline: none;
+    }
+    .saSlider1 .owl-dots a span{
+        border:none!important;
+        width: 25px!important;
+        height: 25px!important;
+        background-color: transparent!important;
+        display: flex!important;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+    }
+    .saSlider1 .owl-dots .active span{
+        border:1px solid #000!important;
+        width: 25px!important;
+        height: 25px!important;
+        background-color: transparent!important;
+        display: flex!important;
+        align-items: center;
+        justify-content: center;
+    }
+  
+  
+  
+  
+  
+  
+  
+  
+      .saVideo1 h3{
+        font-size: 32px;
+        color: #000;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+    .saVideo1 p{
+        font-size: 16px;
+        color: #000;
+        line-height: 30px;
+
+    }
+    .saVideo1PlayButton{
+        width: 105px;
+        height: 105px;
+        border: 2px solid #fff;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        position: absolute;
+
+    }
+/*     .saVideo1Left i{
+        color: #000;
+        font-size: 22px;
+        margin-left: 8px;
+    } */
+    .saVideo1PlayButton svg{
+        margin-left: 5px;
+    }
+
+
+/*     .saVideo1 a{
+        color: #000;
+        height: 35px;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 0;
+        background-color: transparent;
+        border-radius: 2px;
+        display: flex;
+        border: none;
+         justify-content: space-evenly;
+        align-items: center;
+        outline: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        margin-right: 10px;
+    } */
+  
+    .saVideo1 a {
+        width: 200px;
+        height: 58px;
+        background-color: #000;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        border: 1px solid transparent;
+        color: #fff;
+        text-transform: uppercase;
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  
+  
+  
+  
+  
+  
+    .saVideo1 a svg{
+		transform: translateX(5px);
+        transition: 0.5s all ease;
+    }
+  	.saVideo1 a:hover svg{
+    	transform: translateX(10px);
+    }
+  
+  
+  
+  
+  
+  
+  
+    .saVideo1 .saVideo1Left{
+        min-height: 280px;
+        background-color: #EFF0F4;
+        display: flex;
+        align-items: center;
+    	justify-content: start;
+        border-radius: 2px;
+        max-height: 350px;
+/*       	z-index:-2; */
+    }
+    .saVideo1 .saVideo1Right{
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+        display: flex;
+        width: 100%;
+        height: 400px;
+        position: absolute;
+        top: 100px;
+        right: 0;
+      	z-index:1;
+    }
+/*   .saVideo1 .saVideo1Right iframe{
+  		z-index:-1;
+  
+  } */
+</style>
+
+
+
+
+<script>
+    $(document).ready(function (){
+        $('.saSlider1 .owl-dots .owl-dot span').prepend('<div style="width: 7px;height: 7px;background-color: #000;border-radius: 100%"></div>')
+    })
+    
+    
+    
+    
+    
+    
+//     function autoPlayVideo(vcode, width, height){
+//   		"use strict";
+//       $(".saVideo1Right").html('<iframe style="z-index: unset;" width="'+width+'" height="'+height+'" src="https://www.youtube.com/embed/'+vcode+'?autoplay=1&loop=1&rel=0&wmode=transparent" frameborder="0" allowfullscreen wmode="Opaque"></iframe>');
+// 	}
+    
+    
+//     $('.saVideo1PlayButton').click(function(){
+// //       	 console.log(1)
+//          $(this).parent().css('background-image',"");
+//       	 $(this).fadeOut();
+//       	 var videoSrc = $(this).parent().children('iframe').attr('src');
+// //       	 $(this).parent().children('iframe').attr('src',videoSrc+"?autoplay=1")
+
+//     	 autoPlayVideo('aiHlvpTEXbs','100%','100%');
+//     })
+    
+</script>
+
+
+
+
+
+{% schema %}
+  {
+    "name": "saVideo1",
+    "settings": [
+		{
+          "type": "image_picker",
+          "id": "posterImg",
+          "label": {
+            "en": "posterImage"
+      		}
+		},
+		{
+          "type": "text",
+          "id": "title",
+          "label": {
+            "en": "title"
+          }
+       	},
+		{
+          "type": "text",
+          "id": "text",
+          "label": {
+            "en": "text"
+          }
+       	},
+		{
+          "type": "text",
+          "id": "btn_laybel",
+          "label": {
+            "en": "button_laybel"
+          }
+       	}
+
+	],
+    "presets": [
+      {
+      "name": "saVideo1",
+      "category": "ADVANCED LAYOUT"
+      }
+	]
+	
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

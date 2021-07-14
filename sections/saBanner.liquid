@@ -1,0 +1,65 @@
+<div class="flex-grow-1 per-10 h-200 image-bar__item lazyload saBanner md-none"
+     data-bgset="{% include 'bgset', image: section.settings.BannerImg %}">
+</div>
+<div class="flex-grow-1 per-10 image-bar__item lazyload saBanner md-block"
+     style="display:none;background-size: contain!important;"
+     data-bgset="{% include 'bgset', image: section.settings.BannerImgMobile %}">
+</div>
+
+<style>
+  .saBanner{
+  	height:340px;
+    margin:70px 0;
+  }
+  @media only screen and (max-width:1000px){
+    .saBanner{
+    	margin-top:170px;
+        height:153px;
+    }
+  }
+  
+</style>
+
+
+{% schema %}
+  {
+    "name": "saBanner",
+    "settings": [
+		{
+          "type": "image_picker",
+          "id": "BannerImg",
+          "label": {
+            "en": "BannerImage"
+      		}
+		},
+		{
+          "type": "image_picker",
+          "id": "BannerImgMobile",
+          "label": {
+            "en": "BannerImgMobile"
+      		}
+		},
+		{
+          "type": "text",
+          "id": "title",
+          "label": {
+            "en": "title"
+          }
+       	}
+
+	],
+    "presets": [
+      {
+      "name": "saBanner",
+      "category": "ADVANCED LAYOUT"
+      }
+	]
+	
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

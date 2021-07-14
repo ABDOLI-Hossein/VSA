@@ -1,0 +1,43 @@
+<!-- /templates/page.liquid -->
+<!-- <section class="page page-top">
+  <div class="wrapper">
+    <header class="content-util">
+
+    </header>
+
+  </div>
+</section> -->
+
+<!-- <section class="page">
+  <div class="wrapper">
+    <div class="content-container narrow rte">
+      {{ page.content }}
+    </div>
+  </div>
+</section> -->
+
+{% section 'saTopCustomOrder' %}
+{% section 'saVideo1' %}
+{% section 'saStyle1' %}
+{% section 'saForm1' %}
+
+<style>
+  @media only screen and (max-width:1000px){
+      .saVideo1 .saVideo1Left{
+            min-height: 380px;
+      }
+      .saVideo1 .saVideo1Left h3{
+    		font-size:24px;
+      		line-height: 37px;      		
+       }
+      .saVideo1{
+        min-height: 575px!important;
+       }
+      .saVideo1 .saVideo1Right {
+    	    top: unset!important;
+      		bottom:0;
+       }
+  }
+  
+</style>
+

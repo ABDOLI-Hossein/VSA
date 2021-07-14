@@ -1,0 +1,67 @@
+{% render 'full-width-banner-cta', 
+  image: section.settings.image, 
+  mobile: section.settings.mobile_image, 
+  maxheight: section.settings.max, 
+  enable_bottom_border_button: section.settings.enable_bottom_border_button, 
+  cta_sub: section.settings.ctatext_sub, 
+  button_text: section.settings.cta_button_text, 
+  button_url: section.settings.cta_button_link, 
+  cta_title_image: section.settings.cta_title_image
+  cta_title_image_alt: section.settings.cta_title_image.alt
+%}
+
+{% schema %}
+{
+  "name": "Full Width Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "cta_title_image",
+      "label": "CTA Title Image"
+    },
+    {
+      "type": "text",
+      "id": "ctatext_sub",
+      "label": "CTA Sub-title"
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "CTA Button Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_button_link",
+      "label": "CTA Button Link"
+    },
+    {
+      "type": "text",
+			"id": "max",
+			"label": "Max Size (In Pixels)",
+      "default": "650px"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_bottom_border_button",
+      "label": "Enable Bottom Border",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+			"id": "image",
+			"label": "Image"
+    },
+    {
+      "type": "image_picker",
+			"id": "mobile_image",
+			"label": "Mobile Image"
+    } 
+  ],
+  "presets": [
+    {
+      "category": "EFLD - New",
+      "name": "Full Width Banner"
+    }
+  ]
+}
+{% endschema %}

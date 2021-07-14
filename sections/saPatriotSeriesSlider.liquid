@@ -1,0 +1,303 @@
+<div class="per-10 flex-grow-1 saPatriotSeries">
+	<div class="owl-carousel owl-theme saPatriotSeriesOwl">
+                <div class="item">
+                     <div class="image-bar__item lazyload" style="width:100%;height: 510px"
+                         data-bgset="{% include 'bgset', image: section.settings.Image1 %}">                 
+                    </div>
+                  	<h2>patriot series</h2>
+<!--                   	<a class="md-none">
+                    	Shop by state  
+                  	</a>
+ -->
+                </div>
+                <div class="item">
+					<div class="d-flex itemWrapper" style="width:100%;height: 510px;background-color:#EFF0F4">
+                      <div class="per-5 flex-grow-1 left  mw-100">
+                        
+                          <h1>Share Your Story</h1>
+                          <p>Inspired with Vintage State Apparel</p>
+<!--                           <a>Shop by State</a> -->
+                      </div>
+                      <div class="per-5 flex-grow-1 right  mw-100">
+                        <div class="image-bar__item lazyload eachImagePatriotSeries" style="width:100%;height: 510px;z-index:1;background-size:contain!important"
+                         	 data-bgset="{% include 'bgset', image: section.settings.Image2 %}">                 
+                    	</div>
+                        
+                      	<div class="circleBack"></div>
+                      </div>
+                      
+                      
+                  	</div>     	           
+     			</div> 
+      
+      
+         		<div class="item">
+					<div class="d-flex itemWrapper" style="width:100%;height: 510px;background-color:#EFF0F4">
+                      <div class="per-5 flex-grow-1 left mw-100">
+                        
+                          <h1>Share Your Story</h1>
+                          <p>Inspired with Vintage State Apparel</p>
+<!--                           <a>Shop by State</a> -->
+                      </div>
+                      <div class="per-5 flex-grow-1 right mw-100">
+                        <div class="image-bar__item lazyload eachImagePatriotSeries" style="width:100%;height: 510px;z-index:1;background-size:contain!important"
+                         	 data-bgset="{% include 'bgset', image: section.settings.Image3 %}">                 
+                    	</div>
+                        
+                      	<div class="circleBack"></div>
+                      </div>
+                      
+                      
+                  	</div>     	           
+     			</div>
+<!--   	<a class="saPatriotSeriesMobileLink" style="display:none">Shop by state</a> -->
+</div>
+</div>
+<style>
+  
+  .saPatriotSeriesOwl .left a{
+        width: 200px;
+        height: 58px;
+        background-color: #000;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        border: 1px solid transparent;
+        color: #fff;
+        text-transform: uppercase;
+    	border-radius: 2px;
+        display: flex;
+    	align-items: center;
+    	justify-content:center;
+  }
+  
+  
+  
+  .saPatriotSeriesOwl .left{
+        display:flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 70px;
+
+  } 
+  .saPatriotSeriesOwl .right .circleBack{
+        width: 450px;
+        margin: 0 auto;
+        height: 450px;
+        position: absolute;
+        background-color: #fff;
+        border-radius: 100%;
+        bottom: -50px;
+        right: 60px;
+
+    }
+  
+  
+  
+  
+  
+  
+  .saPatriotSeries{
+  	position:relative;
+  }
+  .saPatriotSeries  .saPatriotSeriesOwl h2{
+  	text-transform: uppercase;
+    color:#fff;
+    position: absolute;
+    text-align:center;
+    left:0;
+	right:0;
+    top:320px;
+    font-size:100px;
+    font-family:"vogue"!important;
+    font-weight: 100;
+    text-shadow: 0px 0px 7px #000;
+
+  
+  }
+  .saPatriotSeries  .saPatriotSeriesOwl .item{
+    background-color: #EFF0F4;
+  	position:relative;
+  }
+  .saPatriotSeries  .saPatriotSeriesOwl .owl-dots button{
+
+    	width: 30px;
+    	height: 30px;
+    	border-radius: 100%;
+        display: flex;
+    	align-items: center;
+    	justify-content: center;
+        padding: 0!important;
+        margin: 0 10px;
+
+}
+  .saPatriotSeries  .saPatriotSeriesOwl .owl-dots .owl-dot.active{
+        	background-color: #fff;
+  }
+  .saPatriotSeries  .saPatriotSeriesOwl .owl-dots .owl-dot span{
+  	width: 8px;
+    height: 8px;
+  
+  }
+  
+  .saPatriotSeries  .saPatriotSeriesOwl .owl-dots .owl-dot.active span {
+  	background:#000!important;
+  }
+  
+  
+  .saPatriotSeries  .saPatriotSeriesOwl .owl-dots{
+  	margin-top: -33px;
+    position: absolute;
+    width: 100%;
+    bottom: 15px;
+    display: flex;
+    justify-content: center;  
+  }
+  
+/*   .saPatriotSeriesOwl .item a{
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    border: 1px solid #fff;
+     border-radius: 7px; 
+    padding: 14px;
+    display: block;
+    width: fit-content;
+    position: absolute;
+    bottom: 151px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 22px;
+    width: 220px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+  
+  @media only screen and (max-width:1000px){
+    .eachImagePatriotSeries{
+            height: 375px!important;
+    }
+    
+    
+    
+    .saPatriotSeriesOwl .right .circleBack {
+    	width: 365px!important;
+    	height: 355px!important;
+		right: 0!important;
+    	left: 0!important;
+    
+    }
+    
+    
+    .itemWrapper{
+    	flex-direction: column;
+    }
+    .saPatriotSeriesOwl .left{
+    	padding:15px 0!important;
+        align-items: center;
+
+    
+    }
+    .saPatriotSeries{
+      margin-bottom:150px;
+    }
+    .saPatriotSeries .saPatriotSeriesOwl .owl-dots {
+    	bottom:-55px;
+    }
+    .saPatriotSeries .saPatriotSeriesOwl h2{
+    	top:unset!important;
+      	bottom: 30px;
+        font-size: 45px!important;
+    }
+    .saPatriotSeries .saPatriotSeriesOwl .owl-dots .owl-dot.active {
+        border: 1px solid #000;
+    }
+    .saPatriotSeries .saPatriotSeriesMobileLink{
+        position: absolute;
+        bottom: -135px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align: center;
+      
+      
+        width: 200px;
+    	height: 58px;
+    	background-color: #000;
+    	font-family: 'Roboto Condensed', sans-serif;
+    	font-size: 16px;
+    	font-weight: 400;
+    	border: 1px solid transparent;
+    	color: #fff;
+    	text-transform: uppercase;
+    	border-radius: 2px;
+    	display: flex!important;
+    	align-items: center;
+    	justify-content: center;
+    }
+  }
+  
+</style>
+
+
+
+{% schema %}
+  {
+    "name": "saPatriotSeries",
+    "settings": [
+	
+		{
+      "type": "image_picker",
+      "id": "Image1",
+      "label": {
+        "en": "ImageSlide1"
+      	}
+		},
+		{
+      "type": "image_picker",
+      "id": "Image2",
+      "label": {
+        "en": "ImageSlide2"
+      	}
+		},
+		{
+      "type": "image_picker",
+      "id": "Image3",
+      "label": {
+        "en": "ImageSlide2"
+      	}
+		},
+	  	{
+          "type": "text",
+          "id": "title1",
+          "label": {
+            "en": "titleSlide1"
+          }
+       	},
+		{
+          "type": "text",
+          "id": "text1",
+          "label": {
+            "en": "textSlide1"
+          }
+       }
+    
+
+	],
+    "presets": [
+    {
+    "name": "saPatriotSeries",
+    "category": "ADVANCED LAYOUT"
+    }
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

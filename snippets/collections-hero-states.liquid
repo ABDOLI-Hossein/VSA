@@ -1,0 +1,23 @@
+<!-- /snippets/collections-hero-states.liquid -->
+<style>
+
+</style>
+{% assign page_title = title | split: " " %}
+
+{%- if logo_image != blank -%}
+  <header class="state-hero">
+    <div class="wrapper">
+      <div class="hero-logo-container">
+        <img src="{{ logo_image | img_url: '600x' }}" />
+      </div>
+      <div class="hero-title-container">
+        <div class="collections-hero-title hero-title">
+          <div class="hero-title__left">{{ page_title[0] }}</div>
+          <div class="hero-title__right">{{ page_title[1] }}</div>
+        </div>
+      </div>
+      <h1 class="sr-only">{{ title }}</h1>
+    </div>
+  </header>
+
+{%- endif -%}

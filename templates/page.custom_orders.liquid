@@ -1,0 +1,136 @@
+<!-- /templates/page.contact.liquid -->
+{% comment %}
+
+  This page template is a requirement if you are submitting your theme to the Shopify Theme Store.
+  Be sure to select page.contact as the template from the admin page to have this template take effect.
+
+  For information on adding more fields, visit:
+    - http://docs.shopify.com/support/configuration/store-customization/adding-fields-to-the-liquid-contact-form
+
+{% endcomment %}
+{% comment %} <section class="page page-top">
+  <div class="wrapper">
+    <header class="content-util">
+    {% include 'breadcrumb' %}
+    {% include 'social-icons' %}
+    </header>
+    <header class="page-header">
+      <h1>{{ page.title }}</h1>
+    </header>
+  </div>
+</section> {% endcomment %}
+
+<style>
+
+
+.custom-orders-page .full-width-image {
+  background-image: url(https://picsum.photos/1400/800);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #464646;
+  height: 800px;
+  width: 100%;
+}
+
+.custom-orders-page .contact {
+  border: 2px solid #888888;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 40px;
+}
+
+
+
+</style>
+
+{% assign hero_image = 'VSA-contact-us-page-hero-min.jpg' %}
+{% render 'new-hero', hero_image: hero_image, title: $page.title %}
+
+<section class="section-padding-md custom-orders-page video-text-section">
+  <div class="container">
+    <div class="row justify-content-between align-items-left">
+      <div class="col-12 col-lg-4">
+        {% if page.content == blank %}
+          <h2 class="h1">Custom Orders</h2>
+        {% endif %}
+
+        {% if page.content != blank %}
+        <div class="mt-3 mb-4">
+          {{ page.content }}
+        </div>
+        {% endif %}
+
+      </div>
+      
+      <div class="col-12 col-lg-7 mt-5 mt-lg-0">
+        {% section 'efld-video' %}
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+{% section "full-width-image" %}
+
+
+<section class="page custom-orders-page">
+  <div class="wrapper">
+    {% comment %}
+      Regular page content goes here.
+    {% endcomment %}
+
+    {% comment %}
+      Contact form starts here
+    {% endcomment %}
+    <div id="custom-contact-form" class="content-container contact form">
+      <div class="contact-form-content text-center mb-4 mt-3">
+        <h2>Custom Bulk Headwear Inquiry</h2>
+        <h5 class="mb-3">Custom patch creations to fit your brand needs</h5>
+        <p>*12 Hat Minimum*</p>
+      </div>
+      {% form 'contact' %}
+
+        {% comment %}
+          Successful message
+        {% endcomment %}
+        {% if form.posted_successfully? %}
+          <p class="note form-success">
+            {{ 'contact.form.post_success' | t }}
+          </p>
+        {% endif %}
+
+        <div class="selection-wrapper">
+          {{ form.errors | default_errors }}
+        </div>
+
+        <div class="selection-wrapper">
+          <div class="input-row">
+            {% assign name_attr = 'contact.form.name' | t | handle %}
+            <label for="ContactFormName" class="hidden-label">{{ 'contact.form.name' | t }}</label>
+            <input type="text" id="ContactFormName" class="input-full" name="contact[{{ name_attr }}]" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+          </div>
+          <div class="input-row">
+            <label for="ContactFormEmail" class="hidden-label">{{ 'contact.form.email' | t }}</label>
+            <input type="email" id="ContactFormEmail" class="input-full" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+          </div>
+          <div class="input-row">
+            {% assign name_attr = 'contact.form.phone' | t | handle %}
+            <label for="ContactFormPhone" class="hidden-label">{{ 'contact.form.phone' | t }}</label>
+            <input type="tel" id="ContactFormPhone" class="input-full" name="contact[{{ name_attr }}]" pattern="[0-9\-]*" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+          </div>
+          <div class="input-row">
+            <label for="ContactFormMessage" class="hidden-label">{{ 'contact.form.message' | t }}</label>
+            <textarea rows="10" id="ContactFormMessage" class="input-full" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+          </div>
+          <p class="submit">
+            <input type="submit" value="{{ 'contact.form.send' | t }}">
+          </p>
+        </div>
+      
+
+      {% endform %}
+
+    </div>
+  </div>
+</section>

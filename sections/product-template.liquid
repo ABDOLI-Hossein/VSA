@@ -1,0 +1,443 @@
+{% comment %}2019-07-14 - added prefill of state name {% endcomment %}
+{% if product.url contains 'alabama' %}{% assign statename='alabama' %}{% assign statecase = 'Alabama' %}{% endif %}
+{% if product.url contains 'alaska' %}{% assign statename='alaska' %}{% assign statecase = 'Alaska' %}{% endif %}
+{% if product.url contains 'arizona' %}{% assign statename='arizona' %}{% assign statecase = 'Arizona' %}{% endif %}
+{% if product.url contains 'arkansas' %}{% assign statename='arkansas' %}{% assign statecase = 'Arkansas' %}{% endif %}
+{% if product.url contains 'california' %}{% assign statename='california' %}{% assign statecase = 'California' %}{% endif %}
+{% if product.url contains 'colorado' %}{% assign statename='colorado' %}{% assign statecase = 'Colorado' %}{% endif %}
+{% if product.url contains 'connecticut' %}{% assign statename='connecticut' %}{% assign statecase = 'cCnnecticut' %}{% endif %}
+{% if product.url contains 'delaware' %}{% assign statename='delaware' %}{% assign statecase = 'Delaware' %}{% endif %}
+{% if product.url contains 'florida' %}{% assign statename='florida' %}{% assign statecase = 'Florida' %}{% endif %}
+{% if product.url contains 'georgia' %}{% assign statename='georgia' %}{% assign statecase = 'Georgia' %}{% endif %}
+{% if product.url contains 'hawaii' %}{% assign statename='hawaii' %}{% assign statecase = 'Hawaii' %}{% endif %}
+{% if product.url contains 'idaho' %}{% assign statename='idaho' %}{% assign statecase = 'Idaho' %}{% endif %}
+{% if product.url contains 'illinois' %}{% assign statename='illinois' %}{% assign statecase = 'Illinois' %}{% endif %}
+{% if product.url contains 'indiana' %}{% assign statename='indiana' %}{% assign statecase = 'Indiana' %}{% endif %}
+{% if product.url contains 'iowa' %}{% assign statename='iowa' %}{% assign statecase = 'Iowa' %}{% endif %}
+{% if product.url contains 'kansas' %}{% assign statename='kansas' %}{% assign statecase = 'Kansas' %}{% endif %}
+{% if product.url contains 'kentucky' %}{% assign statename='kentucky' %}{% assign statecase = 'Kentucky' %}{% endif %}
+{% if product.url contains 'louisiana' %}{% assign statename='louisiana' %}{% assign statecase = 'Louisiana' %}{% endif %}
+{% if product.url contains 'maine' %}{% assign statename='maine' %}{% assign statecase = 'Maine' %}{% endif %}
+{% if product.url contains 'maryland' %}{% assign statename='maryland' %}{% assign statecase = 'Maryland' %}{% endif %}
+{% if product.url contains 'massachusetts' %}{% assign statename='massachusetts' %}{% assign statecase = 'Massachusetts' %}{% endif %}
+{% if product.url contains 'michigan' %}{% assign statename='michigan' %}{% assign statecase = 'Michigan' %}{% endif %}
+{% if product.url contains 'minnesota' %}{% assign statename='minnesota' %}{% assign statecase = 'Minnesota' %}{% endif %}
+{% if product.url contains 'mississippi' %}{% assign statename='mississippi' %}{% assign statecase = 'Mississippi' %}{% endif %}
+{% if product.url contains 'missouri' %}{% assign statename='missouri' %}{% assign statecase = 'Missouri' %}{% endif %}
+{% if product.url contains 'montana' %}{% assign statename='montana' %}{% assign statecase = 'Montana' %}{% endif %}
+{% if product.url contains 'nebraska' %}{% assign statename='nebraska' %}{% assign statecase = 'Nebraska' %}{% endif %}
+{% if product.url contains 'nevada' %}{% assign statename='nevada' %}{% assign statecase = 'Nevada' %}{% endif %}
+{% if product.url contains 'new-hampshire' %}{% assign statename='new-hampshire' %}{% assign statecase = 'New Hampshire' %}{% endif %}
+{% if product.url contains 'new-jersey' %}{% assign statename='new-jersey' %}{% assign statecase = 'New Jersey' %}{% endif %}
+{% if product.url contains 'new-mexico' %}{% assign statename='new-mexico' %}{% assign statecase = 'New Mexico' %}{% endif %}
+{% if product.url contains 'new-york' %}{% assign statename='new-york' %}{% assign statecase = 'New York' %}{% endif %}
+{% if product.url contains 'north-carolina' %}{% assign statename='north-carolina' %}{% assign statecase = 'North Carolina' %}{% endif %}
+{% if product.url contains 'north-dakota' %}{% assign statename='north-dakota' %}{% assign statecase = 'North Dakota' %}{% endif %}
+{% if product.url contains 'ohio' %}{% assign statename='ohio' %}{% assign statecase = 'Ohio' %}{% endif %}
+{% if product.url contains 'oklahoma' %}{% assign statename='oklahoma' %}{% assign statecase = 'Oklahoma' %}{% endif %}
+{% if product.url contains 'oregon' %}{% assign statename='oregon' %}{% assign statecase = 'Oregon' %}{% endif %}
+{% if product.url contains 'pennsylvania' %}{% assign statename='pennsylvania' %}{% assign statecase = 'Pennsylvania' %}{% endif %}
+{% if product.url contains 'rhode-island' %}{% assign statename='rhode-island' %}{% assign statecase = 'Rhode Island' %}{% endif %}
+{% if product.url contains 'south-carolina' %}{% assign statename='south-carolina' %}{% assign statecase = 'South Carolina' %}{% endif %}
+{% if product.url contains 'south-dakota' %}{% assign statename='south-dakota' %}{% assign statecase = 'South Dakota' %}{% endif %}
+{% if product.url contains 'tennessee' %}{% assign statename='tennessee' %}{% assign statecase = 'Tennessee' %}{% endif %}
+{% if product.url contains 'texas' %}{% assign statename='texas' %}{% assign statecase = 'Texas' %}{% endif %}
+{% if product.url contains 'utah' %}{% assign statename='utah' %}{% assign statecase = 'Utah' %}{% endif %}
+{% if product.url contains 'vermont' %}{% assign statename='vermont' %}{% assign statecase = 'Vermont' %}{% endif %}
+{% if product.url contains 'virginia' %}{% assign statename='virginia' %}{% assign statecase = 'Virginia' %}{% endif %}
+{% if product.url contains 'washington' %}{% assign statename='washington' %}{% assign statecase = 'Washington' %}{% endif %}
+{% if product.url contains 'west-virginia' %}{% assign statename='west-virginia' %}{% assign statecase = 'West Virginia' %}{% endif %}
+{% if product.url contains 'wisconsin' %}{% assign statename='wisconsin' %}{% assign statecase = 'Wisconsin' %}{% endif %}
+{% if product.url contains 'wyoming' %}{% assign statename='wyoming' %}{% assign statecase = 'Wyoming' %}{% endif %}
+{% if product.url contains 'first-responders' %}{% assign statename='first-responders' %}{% assign statecase = 'First Responders' %}{% endif %}
+ 
+
+<style>
+  .product-title h1 { color: #da552d; }
+  .swatch-container { width: 17% }
+</style>
+<div class="product-template" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-ProductSection data-section-type="product-template" data-enable-history-state="true" data-enable-swatch="{% if section.settings.variant_style == 'dropdowns' %}false{% else %}true{% endif %}">
+  <section class="single-product" itemscope itemtype="http://schema.org/Product">
+    <meta itemprop="name" content="{{ product.title }}{% unless product.has_only_default_variant %} - {{ current_variant.title }}{% endunless %}">
+    <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+    <meta itemprop="image" content="{{ product.featured_image.src | img_url: '1024x1024' }}">
+    {% comment %}
+      Get first variant, or deep linked one
+    {% endcomment %}
+    {% assign current_variant = product.selected_or_first_available_variant %}
+    <div class="wrapper">
+
+      <header class="content-util">
+      {% include 'breadcrumb' %}
+      {% include 'social-icons' %}
+      </header>
+
+      <header class="product-header">
+        <div class="product-jump-container">
+          {% comment %}
+            If the user is on a collection product page (ie with /collections/collection-handle/products/product-handle)
+            in the URL, we can show next/previous links to other products in the collection.
+          {% endcomment %}
+          {% if collection and section.settings.show_product_jump %}
+            {% if collection.previous_product or collection.next_product %}
+              <ul class="product-jump">
+
+              {% if collection.previous_product %}
+                {% capture prev_url %}{{ collection.previous_product}}#content{% endcapture %}
+                <li class="previous">
+                  {{ 'products.general.previous_product_html' | t | link_to: prev_url }}
+                </li>
+              {% endif %}
+
+              {% if collection.next_product %}
+                {% capture next_url %}{{ collection.next_product}}#content{% endcapture %}
+                <li class="next">
+                  {{ 'products.general.next_product_html' | t | link_to: next_url }}
+                </li>
+              {% endif %}
+
+              </ul>
+            {% endif %}
+          {% endif %}
+        </div>
+
+      </header>
+
+      <div class="grid">
+        <div class="product-images thumbnails-placement-{{ section.settings.thumbnails_placement }}">
+          <div class="product-image-container">
+          <div class="images-container  ">
+            
+            
+            {% include 'product-featured-image' %}
+
+            {%- comment -%}
+              Create thumbnails if there is more than one product image
+            {%- endcomment -%}
+            {%- unless product.images.size == 1 or section.settings.thumbnails_placement == 'hide' -%}
+              {%- if section.settings.thumbnails_placement contains 'side' -%}
+                {% include 'product-thumbnails' %}
+              {%- endif -%}
+
+              {% include 'product-thumbnails-slider' %}
+            {%- endunless -%}
+          </div>
+            
+          </div>
+            
+        </div>
+
+        <aside class="product-aside">
+          <div class="purchase-box {% if section.settings.product_box_padding %}padding-box{% endif %}" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+            <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+
+            {% comment %}
+              ID addToCartForm is a selector for the ajax cart plugin
+            {% endcomment %}
+            <div id="AddToCartForm-{{ section.id }}" data-AddToCartForm class="form-vertical product-form product-form-{{ section.id }}" {% if section.settings.show_payment_button %}data-dynamic-checkout="true"{% endif %} data-section="{{ section.id }}">
+              {% include 'product-form' %}
+            </div>
+          </div>
+
+          {% if section.settings.trust_badge %}
+            <div class="trust-badge">
+              {% if section.settings.trust_badge %}
+                {%- assign image = section.settings.trust_badge -%}
+                {% assign image_widths = '295,394,590,700,800,1000,1200,1500,1800,2000,2400' %}
+                {% include 'theme-rias' %}
+                <img class="trust-badge--image lazyload"
+                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  style="max-width: {{ image.width }}px;"
+                  data-src="{{ image_url_pattern }}"
+                  data-widths="[{{ image_widths }}]"
+                  data-aspectratio="{{ image.aspect_ratio }}"
+                  data-sizes="auto"
+                  alt="{{ image.alt | escape }}">
+              {% endif %}
+            </div>
+            <style>
+              {%- assign padding = 1 | divided_by: image.aspect_ratio | times: 100 | append: '%' -%}
+              #ProductSection-{{ section.id }} aside.product-aside .trust-badge:before {
+                 padding-bottom: {{ padding }};
+              }
+            </style>
+          {% endif %}
+          
+          <div style="width: 90%; margin: auto; text-align: center;">
+
+          <a 
+             href="/collections/{{ statename }}" 
+             style="padding: 15px; text-align: center !important; text-transform: uppercase; font-size: 17px; font-weight: bold;" 
+             class="">See more products for {{ statecase }}</a>
+          </div>
+          {%- assign description_parts = product.description | split: '<!-- split -->' -%}
+          <div class="description rte" itemprop="description">
+            {{ description_parts | first }}
+          </div>
+        
+
+          {% if section.settings.show_share_buttons %}
+            {% include 'social-share' %}
+          {% endif %}
+          
+        </aside>
+      </div>
+
+      {%- if description_parts.size > 1 -%}
+        <div class="additional-description rte">
+          {%- for description_part in description_parts -%}
+            {%- unless forloop.first -%}
+              {{ description_part }}
+            {%- endunless -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+          
+    
+      {%- comment -%}
+        Optional place to add product reviews snippets from Shopify Apps
+        - Shopify Product Reviews
+        - YOTPO
+        - Judge.me
+      {%- endcomment -%}
+      <div class="product-reviews"></div>
+
+    </div>
+  </section>
+
+  {% comment %}
+    Related products
+  {% endcomment %}
+  {% for block in section.blocks %}
+    <div class="product-block-container" {{ block.shopify_attributes }}>
+      {% case block.type %}
+        {% when 'related_products' %}
+          <div class="block-container">
+            {% comment %}
+            {% include 'related-products' %}
+            {% endcomment %}
+            
+            </div>
+            
+          </div>
+
+        {% when 'product_collection'}
+          {%- assign product_collection_count = '4' -%}
+          {%- assign collection_count = '4' -%}
+          <div class="simple-collection layout-{{ collection_count }}">
+            <div class="wrapper">
+              <header>
+                {% if block.settings.title != blank %}
+                  <h4>{{ block.settings.title | escape }}</h4>
+                {% endif %}
+                {% if block.settings.button_link != blank and block.settings.button_label != blank %}
+                  <a href="{{ block.settings.button_link }}" class="button outline">{{ block.settings.button_label | escape }}</a>
+                {% endif %}
+              </header>
+              <div class="product-container">
+                {%- assign collection = collections[block.settings.collection] -%}
+                {%- assign product_limit = collection_count -%}
+                {% for product in collection.products limit: product_limit  %}
+                  {% include 'product-grid-item' %}
+                {% else %}
+                  {% for i in (1..product_limit) %}
+                    {% include 'placeholder-product-grid-item' %}
+                  {% endfor %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+      {% endcase %}
+    </div>
+  {% endfor %}
+
+</div>
+{% unless product.empty? %}
+  <script type="application/json" id="ProductJson-{{ section.id }}">
+    {{ product | json }}
+  </script>
+{% endunless %}
+
+{%- if section.settings.size_guide_page != blank -%}
+<div id="product-size-guide-content-{{ section.id }}" class="popup-page mfp-hide">
+  <div class="rte">{{ pages[section.settings.size_guide_page].content }}</div>
+</div>
+{%- endif -%}
+
+
+{% schema %}
+{
+  "name": "Product pages",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product form settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendors",
+      "label": "Show vendor",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "variant_style",
+      "label": "Product variant style",
+      "options": [
+        {
+          "value": "dropdowns",
+          "label": "Dropdowns"
+        },
+        {
+          "value": "buttons",
+          "label": "Buttons"
+        },
+        {
+          "value": "swatches",
+          "label": "Swatches"
+        }
+      ],
+      "default": "dropdowns"
+    },
+    {
+      "type": "checkbox",
+      "id": "variant_swatch_images",
+      "label": "Show swatch images",
+      "info": "Upload custom swatch images. [Learn more](https://help.stylehatch.com/article/335-product-color-swatches)",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "variant_swatch_shape",
+      "label": "Swatch shape",
+      "options": [
+        {
+          "value": "circle",
+          "label": "Circle"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "circle"
+    },
+    {
+      "type": "checkbox",
+      "id": "variant_swatch_soldout",
+      "label": "Disable sold out swatches",
+      "default": true
+    },
+    {
+      "type": "page",
+      "id": "size_guide_page",
+      "label": "Size guide content"
+    },
+    {
+      "type": "checkbox",
+      "id": "product_quantity_enable",
+      "label": "Show quantity selector",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_button",
+      "label": "Show dynamic checkout button",
+      "info": "Lets customers check out directly using a familiar payment method. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product_box_padding",
+      "label": "Show product details background",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Image settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_image_slider",
+      "label": "Enable image slider",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show slider dots",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show previous and next arrows",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "thumbnails_placement",
+      "label": "Thumbnails placement",
+      "options": [
+        {
+          "value": "side--left",
+          "label": "Left"
+        },
+        {
+          "value": "side",
+          "label": "Right"
+        },
+        {
+          "value": "below",
+          "label": "Below"
+        },
+        {
+          "value": "hide",
+          "label": "Hide"
+        }
+      ],
+      "default": "side"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_thumb_slider",
+      "label": "Group thumbnails",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product_featured_zoom_enable",
+      "label": "Enable zoom",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "product_featured_lightbox_enable",
+      "label": "Enable lightbox",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Additional options"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_jump",
+      "label": "Show previous and next links",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "trust_badge",
+      "label": "Checkout badge image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": "Show social sharing buttons",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

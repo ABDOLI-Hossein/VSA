@@ -1,0 +1,116 @@
+<section class="section-padding-sm">
+  <div class="hat-swatch__container">
+    <div class="hat-swatch__grid">
+      {% for product in collections.hat-variants.products %}
+      <div class="hat-swatch">
+        <h1 class="hat-swatch__product-title">{{ product.title }}</h1>
+
+        {% if product.featured_image != blank%}
+        <div class="hat-swatch__product-image-container">
+          {% if product.metafields.product.collection_url != blank%}
+          <a href="{{ product.metafields.product.collection_url }}">
+          {% endif %}
+            <img
+              class="hat-swatch__product-image"
+              src="{{ product.featured_image | img_url: '400x400' }}"
+              alt="{{ product.featured_image.alt | replace: "<span>", " " | replace: "</span>", " "}}hat"
+            />
+          {% if product.metafields.product.collection_url != blank%}
+          </a>
+          {% endif %}
+        </div>
+        {% else %}
+        <div class="text-center">
+          <svg
+            id="Layer_1"
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 54.08 34"
+            style="padding-top: 40px; max-width: 210px;"
+          >
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                }
+                .cls-2 {
+                  clip-path: url(#clip-path);
+                }
+                .cls-3 {
+                  fill: #231f20;
+                }
+              </style>
+              <clipPath id="clip-path">
+                <rect class="cls-1" width="54.08" height="34" />
+              </clipPath>
+            </defs>
+            <g class="cls-2">
+              <path
+                class="cls-3"
+                d="M40.72,9.76,6.8,27.48a3,3,0,0,1-.72-1.94V20c0-8.31,6-15.31,14.05-17.38l.22-.05a4,4,0,0,1,7.35-.26l.36.07A47.54,47.54,0,0,1,33.5,3.86a18.53,18.53,0,0,1,7.22,5.9"
+              />
+              <path
+                class="cls-3"
+                d="M54.08,23.1c0,.11-1.25,10.9-15,10.9-10.58,0-15.82-4.46-16.61-5.19-1.74.12-3.54.19-5.39.19-2.5,0-4.6-.07-6.28-.22L42.28,12.32a17.13,17.13,0,0,1,1.78,6.93L53.37,22a1,1,0,0,1,.71,1.06"
+              />
+              <path
+                class="cls-3"
+                d="M8.51,28.48c.65.12,1.41.22,2.29.3L1.39,33.7,0,31l6.8-3.56a2.92,2.92,0,0,0,1.71,1"
+              />
+              <path
+                class="cls-3"
+                d="M52.79,6.83,42.28,12.32a16.84,16.84,0,0,0-1.56-2.56L51.4,4.17Z"
+              />
+            </g>
+          </svg>
+
+          <h3 class="text-center mt-3">Coming Soon</h3>
+        </div>
+        {% endif %}
+
+        {% if product.variants.size > 0 and product.metafields.product.collection_url != blank %}
+        <ul class="hat-swatch__btn-list">
+          {% for variant in product.variants %}
+          <li>
+            {% assign colors = variant.title | split: "-" %} 
+            {% if colors.size >= 2 %}
+            {% assign color1 = colors[0] %} 
+            {% assign color2 = colors[1] %}
+            <button
+              type="button"
+              data-product-image="{{ variant.image.src | img_url: '400x400' }}"
+              class="hat-swatch__swatch hat-swatch__swatch--two-colors"
+              style="background: linear-gradient(to right, {{ color1 }} 50%, {{ color2 }} 50%);"
+            >
+              <span class="assistive-text">Change hat colors to {{ color1 }} and {{ color2 }}</span>
+            </button>
+            {% elsif colors.size == 1 %}
+            {% assign singleColor = colors %}
+            <button
+              type="button"
+              data-product-image="{{ variant.image.src | img_url: '400x400' }}"
+              class="hat-swatch__swatch"
+              style="background: {{ singleColor }}; background-color: {{ singleColor }};"
+            >
+              <span class="assistive-text">Change hat color to {{ singleColor }}</span>
+            </button>
+            {% endif%}
+          </li>
+          {% endfor %}
+        </ul>
+
+
+        {% if product.metafields.product.collection_url != blank%}
+        <div class="hat-swatch__link">
+          <a class="button button__border button--black" href="{{ product.metafields.product.collection_url }}">
+            shop style
+          </a>
+        </div>
+        {% endif%}
+      </div>
+      {% endif%}
+      {% endfor %}
+    </div>
+  </div>
+</section>

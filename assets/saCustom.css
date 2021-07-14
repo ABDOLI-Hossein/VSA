@@ -1,0 +1,286 @@
+@font-face{
+	font-family: 'vogue';
+  	src: url('Vogue.woff') format('woff');
+}
+
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif!important;
+}
+.whole-wrapper{
+	max-width:1366px;
+  	margin:0 auto;
+      padding: 0 100px;
+}
+
+.p-relative{
+    position: relative;
+}
+.p-absolute{
+    position: absolute;
+}
+
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+.bg-red{
+    background-color: red;
+}
+.bg-green{
+    background-color: green;
+}
+.bg-yellow{
+    background-color: yellow;
+}
+.bg-black{
+    background-color: black;
+}
+.bg-white{
+    background-color: white;
+}
+.bg-orange{
+    background-color: orange;
+}
+.per-33{
+    max-width: 33.33333333333333%;
+}
+.per-25{
+    max-width: 25%;
+}
+.per-50{
+    max-width: 50%;
+}
+.center-of-height-width{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.center-of-width{
+    display: flex;
+    justify-content: center;
+}
+.d-flex{
+    display: flex;
+}
+.d-none{
+    display: none;
+}
+.m-left-right-auto{
+    margin: 0 auto;
+}
+.per-1{
+    max-width: 10%;
+}
+.per-2{
+    max-width: 20%;
+}
+.per-3{
+    max-width: 30%;
+}
+.per-4{
+    max-width: 40%;
+}
+.per-5{
+    max-width: 50%;
+}
+.per-6{
+    max-width: 60%;
+}
+.per-7{
+    max-width: 70%;
+}
+.per-8{
+    max-width: 80%;
+}
+.per-9{
+    max-width: 90%;
+}
+.per-10{
+    max-width: 100%;
+}
+.w-per-100{
+    width: 100%;
+}
+.h-0{
+    height: 0!important;
+}
+.h-80{
+    height: 80%!important;
+}
+.h-100{
+    height: 100px;
+}
+.h-per-100{
+    height: 100%;
+}
+.h-200{
+    height: 200px;
+}
+.h-300{
+    height: 300px;
+}
+.h-400{
+    height: 400px;
+}
+.h-500{
+    height: 500px;
+}
+.h-600{
+    height: 600px
+}
+.h-700{
+    height: 700px;
+}
+.h-800{
+    height: 800px;
+}
+.h-900{
+    height: 900px;
+}
+.h-1000{
+    height: 1000px;
+}
+.w-100{
+    width: 100px;
+}
+.w-200{
+    width: 200px;
+}
+.w-300{
+    width: 300px;
+}
+.w-400{
+    width: 400px;
+}
+.w-500{
+    width: 500px;
+}
+.flex-grow-1{
+    flex-grow: 1;
+}
+.flex-grow-2{
+    flex-grow: 2;
+}
+.flex-grow-3{
+    flex-grow: 3;
+}
+.flex-grow-4{
+    flex-grow: 4;
+}
+.flex-grow-5{
+    flex-grow: 5;
+}
+.flex-column{
+    flex-direction: column;
+}
+.justify-content-center{
+    justify-content: center;
+}
+.align-items-center{
+    align-items: center;
+}
+.align-items-left{
+    align-items: flex-start;
+}
+.mrl-auto{
+    margin: 0 auto;
+}
+.home-video h6{
+    font-size: 48px;
+    text-align: left;
+    margin: 0;
+}
+.home-video button{
+    width: 200px;
+    height: 58px;
+    background-color: #000;
+    border: 1px solid transparent;
+    color: #fff;
+}
+.home-video p{
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+}
+.vca-owl .item{
+	height:437px;
+}
+.main-content {
+    padding-top: 20px!important;
+}
+.owl-carousel .owl-dots button span div{
+  	    pointer-events: none;
+  }
+
+.owl-carousel .owl-dots .active span div{
+  	    z-index:9;
+  }
+
+
+
+@media only screen and (max-width:1000px){
+  .whole-wrapper {
+  	padding:0 20px;
+  }
+  .mw-100{
+  	max-width:100%!important;
+  }
+  .mText-center{
+  	text-align: center;
+  }
+  .mMargin-auto{
+      margin: 0 auto!important;
+  }
+  .mHeight{
+     height: 100%;
+  }
+  .md-none{
+  	display:none!important;
+  }
+  .m-0{
+  	margin:0!important;
+  }
+  .md-block{
+  	display:block!important;
+  }
+  .flexDrectionColumnM{
+  	flex-direction: column!important;
+  }
+
+}
+.owl-dots .active span {
+	border-radius:30px!important;
+}
+
+nav.header__hidden-nav .header__list-li-small .header__link.header__link--normal:hover{
+	    color: darkgrey!important;
+
+}
+
+.new-hero .wrapper {
+    padding: 70px 20px!important;
+}
+
+.product-filter__body {
+    padding: 10px 0!important;
+}
+.hat-swatch__product-title {
+	font-size:27px!important;
+}
+.elfd-product-grid p{
+	display:none!important;
+}

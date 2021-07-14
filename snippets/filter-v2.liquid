@@ -1,0 +1,371 @@
+<section class="pt-4 py-lg-0">
+  <div class="container">
+    <div class="product-filter__btn-container">
+      <button
+        class="product-filter__btn"
+        id="product-filter-button"
+        type="button"
+      >
+        filter products
+      </button>
+    </div>
+  </div>
+
+  <div id="product-filter-container" class="product-filter__container">
+    <form action="">
+      <div class="container d-lg-none">
+        <div class="product-filter__header">
+          <div class="product-filter__header-content">
+            <button
+              id="close-product-filter"
+              class="arrow-button arrow-button--flipped"
+              type="button"
+            >
+              <span>
+                <svg 
+                  width="24" 
+                  height="8" 
+                  viewBox="0 0 24 8" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M23.3536 4.35355C23.5488 4.15829 23.5488 3.84171 23.3536 3.64645L20.1716 0.464466C19.9763 0.269204 19.6597 0.269204 19.4645 0.464466C19.2692 0.659728 19.2692 0.976311 19.4645 1.17157L22.2929 4L19.4645 6.82843C19.2692 7.02369 19.2692 7.34027 19.4645 7.53553C19.6597 7.7308 19.9763 7.7308 20.1716 7.53553L23.3536 4.35355ZM0 4.5L23 4.5V3.5L0 3.5L0 4.5Z" fill="#5A6E86"/>
+                </svg>
+              </span>
+            </button>
+
+            <h2 class="product-filter__title d-lg-none">filter</h2>
+          </div>
+        </div>
+      </div>
+
+      <div id="product-filter-section" class="product-filter__body">
+        <form>
+          <div class="container">
+            <div class="product-filter__list-container">
+              <ul
+                class="product-filter__list product-filter__main-desktop-list"
+              >
+                <li class="product-filter__list-li">
+                  <button
+                    class="dropdown-button dropdown-button--lg dropdown-button__even-space"
+                    type="button"
+                  >
+                    <span class="dropdown-button__body">
+                      <span>product type</span>
+                      <span class="plus-sign"></span>
+                    </span>
+                  </button>
+
+                  <p
+                    class="product-filter__selected-items"
+                    data-filter-type="product-type"
+                  ></p>
+
+                  <div class="product-filter__hidden-list">
+                    <ul class="product-filter__inner-list">
+                      {% assign productTypeList = "headwear,apparel,drinkware" | split: ',' %}
+
+                      {% for productType in productTypeList %}
+                      <li class="product-filter__inner-list-li">
+                        <label class="product-filter__label" for="{{ productType | replace: ' ', '-' }}">
+                          <input
+                            class="product-filter__checkbox"
+                            data-filter-type="product-type"
+                            id="{{ productType | replace: ' ', '-' }}"
+                            name="{{ productType | replace: ' ', '-' }}"
+                            type="checkbox"
+                            value="{{ productType | replace: ' ', '-' }}"
+                          />
+                          <span class="product-filter__label-text">
+                            {{ productType }}
+                          </span>
+                          <span class="product-filter__checkmark">
+                            &#10006;
+                          </span>
+                        </label>
+                      </li>
+                      {% endfor %} 
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="product-filter__list-li">
+                  <button
+                    class="dropdown-button dropdown-button--lg dropdown-button__even-space"
+                    type="button"
+                  >
+                    <span class="dropdown-button__body">
+                      <span>style</span>
+                      <span class="plus-sign"></span>
+                    </span>
+                  </button>
+
+                  <p
+                    class="product-filter__selected-items"
+                    data-filter-type="style"
+                  ></p>
+
+                  <div class="product-filter__hidden-list">
+                    <ul class="product-filter__inner-list">
+                      {% assign styleFilterList = "short sleeve,muscle tank" | split: ',' %}
+
+                      {% for styleFilterOption in styleFilterList %}
+                      <li class="product-filter__inner-list-li">
+                        <label class="product-filter__label" for="{{ styleFilterOption | replace: ' ', '-' }}">
+                          <input
+                            class="product-filter__checkbox"
+                            data-filter-type="style"
+                            id="{{ styleFilterOption | replace: ' ', '-' }}"
+                            name="{{ styleFilterOption | replace: ' ', '-' }}"
+                            type="checkbox"
+                            value="{{ styleFilterOption | replace: ' ', '-' }}"
+                          />
+                          <span class="product-filter__label-text">
+                            {{ styleFilterOption }}
+                          </span>
+                          <span class="product-filter__checkmark">
+                            &#10006;
+                          </span>
+                        </label>
+                      </li>
+                      {% endfor %} 
+                    </ul>
+                  </div>
+                </li>
+                
+                {% comment %} Collections filter {% endcomment %}
+                {% comment %} <li class="product-filter__list-li">
+                  <button
+                    class="dropdown-button dropdown-button--lg dropdown-button__even-space"
+                    type="button"
+                  >
+                    <span class="dropdown-button__body">
+                      <span>collection</span>
+                      <span class="plus-sign"></span>
+                    </span>
+                  </button>
+
+                  <p
+                    class="product-filter__selected-items"
+                    data-filter-type="collection"
+                  ></p>
+
+                  <div class="product-filter__hidden-list">
+                    <ul class="product-filter__inner-list">
+                      {% assign collectionFilterList = "vintage,iconic,flagship" | split: ',' %}
+
+                      {% for collectionType in collectionFilterList %}
+                      <li class="product-filter__inner-list-li">
+                        <label class="product-filter__label" for="{{ collectionType | replace: ' ', '-' }}">
+                          <input
+                            class="product-filter__checkbox"
+                            data-filter-type="collection"
+                            id="{{ collectionType | replace: ' ', '-' }}"
+                            name="{{ collectionType | replace: ' ', '-' }}"
+                            type="checkbox"
+                            value="{{ collectionType | replace: ' ', '-' }}"
+                          />
+                          <span class="product-filter__label-text">
+                            {{ collectionType }}
+                          </span>
+                          <span class="product-filter__checkmark">
+                            &#10006;
+                          </span>
+                        </label>
+                      </li>
+                      {% endfor %} 
+                    </ul>
+                  </div>
+                </li> {% endcomment %}
+
+                <li class="product-filter__list-li">
+                  <button
+                    class="dropdown-button dropdown-button--lg dropdown-button__even-space"
+                    type="button"
+                  >
+                    <span class="dropdown-button__body">
+                      <span>state</span>
+                      <span class="plus-sign"></span>
+                    </span>
+                  </button>
+
+                  <p
+                    class="product-filter__selected-items"
+                    data-filter-type="state"
+                  ></p>
+
+                  <div class="product-filter__hidden-list">
+                    <ul class="product-filter__state-top-list">
+                      <li class="product-filter__state-top-list-li">
+                        <button class="dropdown-button" type="button">
+                          <span class="dropdown-button__body">
+                            <span>a-i</span>
+                            <span class="plus-sign"></span>
+                          </span>
+                        </button>
+
+                        <div class="product-filter__hidden-list">
+                          <ul class="product-filter__inner-list">
+                            {% assign statesList1 = "alabama,alaska,arizona,arkansas,california,colorado,connecticut,delaware,florida,georgia,hawaii,idaho,illinois,indiana,iowa" | split: ',' %}
+
+                            {% for state in statesList1 %}
+                            <li class="product-filter__inner-list-li">
+                              <label
+                                class="product-filter__label"
+                                for="filter-{{ state | replace: ' ', '-' }}"
+                              >
+                                <input
+                                  class="product-filter__checkbox"
+                                  data-filter-type="state"
+                                  id="filter-{{ state | replace: ' ', '-' }}"
+                                  name="filter-{{ state | replace: ' ', '-' }}"
+                                  type="checkbox"
+                                  value="{{ state | replace: ' ', '-' }}"
+                                />
+                                <span class="product-filter__label-text">
+                                  {{ state }}
+                                </span>
+                                <span class="product-filter__checkmark">
+                                  &#10006;
+                                </span>
+                              </label>
+                            </li>
+                            {% endfor %} 
+                          </ul>
+                        </div>
+                      </li>
+
+                      <li class="product-filter__state-top-list-li">
+                        <button class="dropdown-button" type="button">
+                          <span class="dropdown-button__body">
+                            <span>k-m</span>
+                            <span class="plus-sign"></span>
+                          </span>
+                        </button>
+
+                        <div class="product-filter__hidden-list">
+                          <ul class="product-filter__inner-list">
+                            {% assign statesList2 = "kansas,kentucky,louisiana,maine,maryland,massachusetts,michigan,minnesota,mississippi,missouri,montana" | split: ',' %}
+
+                            {% for state in statesList2 %}
+                            <li class="product-filter__inner-list-li">
+                              <label
+                                class="product-filter__label"
+                                for="filter-{{ state | replace: ' ', '-' }}"
+                              >
+                                <input
+                                  class="product-filter__checkbox"
+                                  data-filter-type="state"
+                                  id="filter-{{ state | replace: ' ', '-' }}"
+                                  name="filter-{{ state | replace: ' ', '-' }}"
+                                  type="checkbox"
+                                  value="{{ state | replace: ' ', '-' }}"
+                                />
+                                <span class="product-filter__label-text">
+                                  {{ state }}
+                                </span>
+                                <span class="product-filter__checkmark">
+                                  &#10006;
+                                </span>
+                              </label>
+                            </li>
+                            {% endfor %} 
+                          </ul>
+                        </div>
+                      </li>
+
+                      <li class="product-filter__state-top-list-li">
+                        <button class="dropdown-button" type="button">
+                          <span class="dropdown-button__body">
+                            <span>n-r</span>
+                            <span class="plus-sign"></span>
+                          </span>
+                        </button>
+
+                        <div class="product-filter__hidden-list">
+                          <ul class="product-filter__inner-list">
+                            {% assign statesList3 = "nebraska,nevada,new hampshire,new jersey,new mexico,new york,north carolina,north dakota,ohio,oklahoma,oregon,pennsylvania,rhode island" | split: ',' %}
+
+                            {% for state in statesList3 %}
+                            <li class="product-filter__inner-list-li">
+                              <label
+                                class="product-filter__label"
+                                for="filter-{{ state | replace: ' ', '-' }}"
+                              >
+                                <input
+                                  class="product-filter__checkbox"
+                                  data-filter-type="state"
+                                  id="filter-{{ state | replace: ' ', '-' }}"
+                                  name="filter-{{ state | replace: ' ', '-' }}"
+                                  type="checkbox"
+                                  value="{{ state | replace: ' ', '-' }}"
+                                />
+                                <span class="product-filter__label-text">
+                                  {{ state }}
+                                </span>
+                                <span class="product-filter__checkmark">
+                                  &#10006;
+                                </span>
+                              </label>
+                            </li>
+                            {% endfor %} 
+                          </ul>
+                        </div>
+                      </li>
+
+                      <li class="product-filter__state-top-list-li">
+                        <button class="dropdown-button" type="button">
+                          <span class="dropdown-button__body">
+                            <span>s-w</span>
+                            <span class="plus-sign"></span>
+                          </span>
+                        </button>
+
+                        <div class="product-filter__hidden-list">
+                          <ul class="product-filter__inner-list">
+                            {% assign statesList4 = "south carolina,south dakota,tennessee,texas,utah,vermont,virginia,washington,west virginia,wisconsin,wyoming" | split: ',' %}
+
+                            {% for state in statesList4 %}
+                            <li class="product-filter__inner-list-li">
+                              <label
+                                class="product-filter__label"
+                                for="filter-{{ state | replace: ' ', '-' }}"
+                              >
+                                <input
+                                  class="product-filter__checkbox"
+                                  data-filter-type="state"
+                                  id="filter-{{ state | replace: ' ', '-' }}"
+                                  name="filter-{{ state | replace: ' ', '-' }}"
+                                  type="checkbox"
+                                  value="{{ state | replace: ' ', '-' }}"
+                                />
+                                <span class="product-filter__label-text">
+                                  {{ state }}
+                                </span>
+                                <span class="product-filter__checkmark">
+                                  &#10006;
+                                </span>
+                              </label>
+                            </li>
+                            {% endfor %} 
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="product-filter__footer">
+        <button class="product-filter__submit-filter-btn" type="button">
+          apply fliters
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
